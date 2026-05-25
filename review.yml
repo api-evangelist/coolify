@@ -1,0 +1,88 @@
+aid: coolify
+name: Coolify
+reviewed: '2026-05-25'
+reviewer: Kin Lane
+tier: 1
+tier-reason: opensource-tier1-self-hostable-paas
+type: opensource
+license: Apache-2.0
+governance: coollabs (founder Andras Bacsai)
+primary-language: PHP (Laravel)
+api-surface:
+  rest:
+    base-url: https://app.coolify.io/api/v1
+    spec: OpenAPI 3.1
+    auth: Bearer token (team-scoped, four permission levels)
+    operations: 96
+    resource-groups:
+    - Applications
+    - Databases
+    - Services
+    - Deployments
+    - Servers
+    - Projects
+    - Teams
+    - GitHub Apps
+    - Cloud Tokens
+    - Private Keys
+    - Scheduled Tasks
+    - Hetzner
+    - Resources
+  sdks: []
+  cli:
+  - name: coolify-cli
+    url: https://github.com/coollabsio/coolify-cli
+    language: Go
+  webhooks: true
+  events: streamed deployment logs over WebSocket; webhook notifications to Discord, Slack, Telegram, email
+artifacts:
+  openapi: openapi/coolify-openapi.yml
+  asyncapi: false
+  json-schema: false
+  spectral-rules: false
+  capabilities: false
+ecosystem:
+  github-org: https://github.com/coollabsio
+  stars: 55837
+  related-repos:
+  - coolify
+  - coolify-cli
+  - coolify-docs
+  - coolify-examples
+  - sentinel
+  - coolpack
+  - maxio
+  - pocketbase
+  - fonts
+commercial:
+  model: open-core (Apache-2.0 self-host free, paid managed cloud)
+  cloud-host: https://app.coolify.io
+  pricing-known: true
+  plans:
+  - Self-Hosted (free forever)
+  - Cloud Base $5/month (2 servers)
+  - Cloud Additional Server $3/month each
+  - Annual 20% discount
+strengths:
+- Public, machine-readable OpenAPI 3.1 spec covering the entire surface
+- Apache-2.0 license with no feature gating between self-hosted and cloud
+- Active project (15.5k+ commits, 678+ releases, 55k+ stars)
+- Identical API on cloud and self-hosted instances - portable workloads
+- Built-in cloud-provider integration (Hetzner) extensible to others
+- First-class CLI and GitHub App for private repos
+weaknesses:
+- OpenAPI info.version still 0.1 despite a mature surface
+- Only one server entry in the spec (Cloud); self-host base URL must be hand-edited
+- No public AsyncAPI for the deployment/log streams
+- Schema coverage limited to 13 components for 96 operations - many inline payloads
+- No first-party language SDKs - clients must hand-roll against the spec
+naftiko-fit:
+  control-plane: strong - full CRUD across compute, data, and deployment primitives
+  governance-surface: applications, services, databases, teams, scheduled tasks
+  policy-targets: pull-request preview environments, scheduled DB backups, per-team token scopes
+notes: |
+  Coolify is a textbook governed-PaaS candidate for API Evangelist Tier 1: open license,
+  shipped OpenAPI spec, hosted-and-self-hosted parity, and a clear commercial model. The
+  REST surface mirrors how teams already think about platform engineering (servers,
+  applications, databases, services, deployments), which makes it an excellent reference
+  for governance, AI-driven deployment, and policy-as-code work.

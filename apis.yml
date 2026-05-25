@@ -1,0 +1,174 @@
+aid: coolify
+name: Coolify
+description: Coolify is an open-source, self-hostable Platform-as-a-Service alternative to Vercel, Heroku,
+  Netlify, and Railway. It lets you deploy static sites, APIs, full-stack applications, databases, and
+  280+ one-click services to any SSH-accessible server (VPS, bare-metal, Raspberry Pi, EC2, Hetzner, DigitalOcean)
+  while keeping every configuration value, deployment, and dataset on infrastructure you own.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/coolify/refs/heads/main/apis.yml
+created: '2026-05-25'
+modified: '2026-05-25'
+specificationVersion: '0.19'
+tags:
+- Platform as a Service
+- Self-Hosting
+- Deployment
+- Open Source
+- Containers
+- Docker
+apis:
+- aid: coolify:coolify
+  name: Coolify
+  tags:
+  - Platform as a Service
+  - Self-Hosting
+  - Deployment
+  - Docker
+  - Open Source
+  humanURL: https://coolify.io/
+  properties:
+  - url: https://coolify.io/
+    type: Portal
+  - url: https://coolify.io/docs/
+    type: Documentation
+  - url: https://github.com/coollabsio/coolify
+    type: SourceCode
+  description: The Coolify platform - an open-source, Apache-2.0 licensed, self-hostable PaaS written in
+    PHP (Laravel) that automates deployment of applications, databases, and services to user-controlled
+    servers via Docker and Docker Compose. Includes free SSL, scheduled backups to S3, pull-request previews,
+    real-time logs, and a team-based RBAC model.
+- aid: coolify:coolify-rest-api
+  name: Coolify REST API
+  tags:
+  - Applications
+  - Databases
+  - Servers
+  - Services
+  - Deployments
+  - Projects
+  - Teams
+  humanURL: https://coolify.io/docs/api-reference/authorization
+  baseURL: https://app.coolify.io/api/v1
+  properties:
+  - url: https://coolify.io/docs/api-reference/authorization
+    type: Documentation
+  - url: https://coolify.io/docs/api-reference/applications/list
+    type: Reference
+  - url: https://coolify.io/docs/api-reference/authorization
+    type: Authentication
+  - url: https://raw.githubusercontent.com/api-evangelist/coolify/refs/heads/main/openapi/coolify-openapi.yml
+    type: OpenAPI
+  description: The Coolify REST API provides programmatic access to every resource managed by a Coolify
+    instance - applications, databases, services, deployments, servers, projects, environments, teams,
+    private keys, GitHub Apps, cloud-provider tokens, scheduled tasks, and Hetzner provisioning. The API
+    is served at /api/v1 by both Coolify Cloud (app.coolify.io) and every self-hosted instance, authenticated
+    with team-scoped Bearer tokens issued through Keys & Tokens.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/coollabsio
+- url: https://coolify.io/
+  type: Portal
+- url: https://coolify.io/docs/
+  type: Documentation
+- url: https://coolify.io/docs/installation
+  type: GettingStarted
+- url: https://app.coolify.io/login
+  type: Login
+- url: https://app.coolify.io/register
+  type: SignUp
+- url: https://coolify.io/pricing
+  type: Pricing
+- url: https://coolify.io/blog
+  type: Blog
+- url: https://github.com/coollabsio/coolify/releases
+  type: ChangeLog
+- url: https://github.com/coollabsio/coolify
+  type: GitHubOrganization
+- url: https://coolify.io/docs/contact
+  type: Support
+- url: https://coolify.io/discord
+  type: Discord
+- url: https://twitter.com/coolifyio
+  type: Twitter
+- url: https://github.com/coollabsio
+  type: GitHubOrganization
+- url: https://opencollective.com/coollabsio
+  type: OpenCollective
+- type: License
+  url: https://github.com/coollabsio/coolify/blob/main/LICENSE
+- url: https://coolify.io/legal/privacy
+  type: PrivacyPolicy
+- url: https://coolify.io/legal/terms
+  type: TermsOfService
+- type: Features
+  data:
+  - Apache-2.0 licensed, self-hostable PaaS
+  - One-line bash installer for any SSH-accessible Linux server
+  - Deploy from GitHub, GitLab, Bitbucket, Gitea, or any Git repo
+  - 280+ one-click services (databases, CMSes, analytics, observability)
+  - Native Docker and Docker Compose support
+  - Built-in databases - PostgreSQL, MySQL, MariaDB, MongoDB, Redis, KeyDB, Dragonfly, ClickHouse
+  - Automatic Let's Encrypt SSL certificates
+  - Scheduled database backups to any S3-compatible storage
+  - Pull-request preview deployments
+  - Real-time terminal access through the browser
+  - Team-based access control with role-based permissions
+  - Webhooks, notifications across Discord/Slack/Telegram/email
+  - REST API and CLI for full programmatic control
+  - GitHub App integration for private repositories
+  - Hetzner Cloud provisioning built in
+  - Free forever when self-hosted; managed cloud at app.coolify.io
+  sources:
+  - https://coolify.io/
+  - https://github.com/coollabsio/coolify
+  updated: '2026-05-25'
+- type: Plans
+  data:
+  - 'Self-Hosted: free forever, all features, no limits'
+  - 'Cloud Base: $5/month, connect up to 2 servers'
+  - 'Cloud Additional Servers: $3/month per additional server'
+  - 'Annual billing: 20% discount'
+  sources:
+  - https://coolify.io/pricing
+  updated: '2026-05-25'
+- name: Coolify CLI
+  url: https://github.com/coollabsio/coolify-cli
+  type: CLI
+- name: Sentinel
+  url: https://github.com/coollabsio/sentinel
+  type: Agent
+- name: Coolify Examples
+  url: https://github.com/coollabsio/coolify-examples
+  type: Samples
+- name: Coolify Docs
+  url: https://github.com/coollabsio/coolify-docs
+  type: Documentation
+- name: Coolpack
+  url: https://github.com/coollabsio/coolpack
+  type: BuildPack
+integrations:
+- name: GitHub
+- name: GitLab
+- name: Bitbucket
+- name: Gitea
+- name: Docker
+- name: Docker Compose
+- name: Hetzner Cloud
+- name: DigitalOcean
+- name: AWS EC2
+- name: Linode
+- name: Let's Encrypt
+- name: S3
+- name: PostgreSQL
+- name: MySQL
+- name: MariaDB
+- name: MongoDB
+- name: Redis
+- name: ClickHouse
+- name: Discord
+- name: Slack
+- name: Telegram
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
