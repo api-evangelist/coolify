@@ -5,7 +5,7 @@ description: Coolify is an open-source, self-hostable Platform-as-a-Service alte
   280+ one-click services to any SSH-accessible server (VPS, bare-metal, Raspberry Pi, EC2, Hetzner, DigitalOcean)
   while keeping every configuration value, deployment, and dataset on infrastructure you own.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/coolify/refs/heads/main/apis.yml
 created: '2026-05-25'
 modified: '2026-05-25'
