@@ -76,7 +76,7 @@ common:
 - url: https://app.coolify.io/login
   type: Login
 - url: https://app.coolify.io/register
-  type: SignUp
+  type: Signup
 - url: https://coolify.io/pricing
   type: Pricing
 - url: https://coolify.io/blog
