@@ -65,6 +65,10 @@ apis:
     is served at /api/v1 by both Coolify Cloud (app.coolify.io) and every self-hosted instance, authenticated
     with team-scoped Bearer tokens issued through Keys & Tokens.
 common:
+- type: DomainSecurity
+  url: security/coolify-domain-security.yml
+- type: Authentication
+  url: authentication/coolify-authentication.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/coollabsio
 - url: https://coolify.io/
