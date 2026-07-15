@@ -65,6 +65,8 @@ apis:
     is served at /api/v1 by both Coolify Cloud (app.coolify.io) and every self-hosted instance, authenticated
     with team-scoped Bearer tokens issued through Keys & Tokens.
 common:
+- type: AgenticAccess
+  url: agentic-access/coolify-agentic-access.yml
 - type: DomainSecurity
   url: security/coolify-domain-security.yml
 - type: Authentication
