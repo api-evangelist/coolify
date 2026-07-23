@@ -1,0 +1,264 @@
+openapi: 3.1.0
+info:
+  title: Coolify Applications Private Keys API
+  version: '0.1'
+  description: Applications
+servers:
+- url: https://app.coolify.io/api/v1
+  description: Coolify Cloud API. Change the host to your own instance if you are self-hosting.
+tags:
+- name: Private Keys
+  description: Private Keys
+paths:
+  /security/keys:
+    get:
+      tags:
+      - Private Keys
+      summary: List
+      description: List all private keys.
+      operationId: list-private-keys
+      responses:
+        '200':
+          description: Get all private keys.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PrivateKey'
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+      security:
+      - bearerAuth: []
+    post:
+      tags:
+      - Private Keys
+      summary: Create
+      description: Create a new private key.
+      operationId: create-private-key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+              - private_key
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                private_key:
+                  type: string
+              type: object
+              additionalProperties: false
+      responses:
+        '201':
+          description: The created private key's UUID.
+          content:
+            application/json:
+              schema:
+                properties:
+                  uuid:
+                    type: string
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '422':
+          $ref: '#/components/responses/422'
+      security:
+      - bearerAuth: []
+    patch:
+      tags:
+      - Private Keys
+      summary: Update
+      description: Update a private key.
+      operationId: update-private-key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+              - private_key
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                private_key:
+                  type: string
+              type: object
+              additionalProperties: false
+      responses:
+        '201':
+          description: The updated private key's UUID.
+          content:
+            application/json:
+              schema:
+                properties:
+                  uuid:
+                    type: string
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '422':
+          $ref: '#/components/responses/422'
+      security:
+      - bearerAuth: []
+  /security/keys/{uuid}:
+    get:
+      tags:
+      - Private Keys
+      summary: Get
+      description: Get key by UUID.
+      operationId: get-private-key-by-uuid
+      parameters:
+      - name: uuid
+        in: path
+        description: Private Key UUID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Get all private keys.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateKey'
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          description: Private Key not found.
+      security:
+      - bearerAuth: []
+    delete:
+      tags:
+      - Private Keys
+      summary: Delete
+      description: Delete a private key.
+      operationId: delete-private-key-by-uuid
+      parameters:
+      - name: uuid
+        in: path
+        description: Private Key UUID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Private Key deleted.
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: Private Key deleted.
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          description: Private Key not found.
+        '422':
+          description: Private Key is in use and cannot be deleted.
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: Private Key is in use and cannot be deleted.
+                type: object
+      security:
+      - bearerAuth: []
+components:
+  schemas:
+    PrivateKey:
+      description: Private Key model
+      properties:
+        id:
+          type: integer
+        uuid:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        private_key:
+          type: string
+          format: private-key
+        public_key:
+          type: string
+          description: The public key of the private key.
+        fingerprint:
+          type: string
+          description: The fingerprint of the private key.
+        is_git_related:
+          type: boolean
+        team_id:
+          type: integer
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      type: object
+  responses:
+    '422':
+      description: Validation error.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Validation error.
+              errors:
+                type: object
+                example:
+                  name:
+                  - The name field is required.
+                  api_url:
+                  - The api url field is required.
+                  - The api url format is invalid.
+                additionalProperties:
+                  type: array
+                  items:
+                    type: string
+            type: object
+    '400':
+      description: Invalid token.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Invalid token.
+            type: object
+    '401':
+      description: Unauthenticated.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Unauthenticated.
+            type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: Go to `Keys & Tokens` / `API tokens` and create a new token. Use the token as the bearer token.
+      scheme: bearer

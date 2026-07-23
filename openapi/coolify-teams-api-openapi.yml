@@ -1,0 +1,238 @@
+openapi: 3.1.0
+info:
+  title: Coolify Applications Teams API
+  version: '0.1'
+  description: Applications
+servers:
+- url: https://app.coolify.io/api/v1
+  description: Coolify Cloud API. Change the host to your own instance if you are self-hosting.
+tags:
+- name: Teams
+  description: Teams
+paths:
+  /teams:
+    get:
+      tags:
+      - Teams
+      summary: List
+      description: Get all teams.
+      operationId: list-teams
+      responses:
+        '200':
+          description: List of teams.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Team'
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+      security:
+      - bearerAuth: []
+  /teams/{id}:
+    get:
+      tags:
+      - Teams
+      summary: Get
+      description: Get team by TeamId.
+      operationId: get-team-by-id
+      parameters:
+      - name: id
+        in: path
+        description: Team ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: List of teams.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Team'
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+      security:
+      - bearerAuth: []
+  /teams/{id}/members:
+    get:
+      tags:
+      - Teams
+      summary: Members
+      description: Get members by TeamId.
+      operationId: get-members-by-team-id
+      parameters:
+      - name: id
+        in: path
+        description: Team ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: List of members.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+      security:
+      - bearerAuth: []
+  /teams/current:
+    get:
+      tags:
+      - Teams
+      summary: Authenticated Team
+      description: Get currently authenticated team.
+      operationId: get-current-team
+      responses:
+        '200':
+          description: Current Team.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Team'
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+      security:
+      - bearerAuth: []
+  /teams/current/members:
+    get:
+      tags:
+      - Teams
+      summary: Authenticated Team Members
+      description: Get currently authenticated team members.
+      operationId: get-current-team-members
+      responses:
+        '200':
+          description: Currently authenticated team members.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+      security:
+      - bearerAuth: []
+components:
+  schemas:
+    User:
+      description: User model
+      properties:
+        id:
+          type: integer
+          description: The user identifier in the database.
+        name:
+          type: string
+          description: The user name.
+        email:
+          type: string
+          description: The user email.
+        email_verified_at:
+          type: string
+          description: The date when the user email was verified.
+        created_at:
+          type: string
+          description: The date when the user was created.
+        updated_at:
+          type: string
+          description: The date when the user was updated.
+        two_factor_confirmed_at:
+          type: string
+          description: The date when the user two factor was confirmed.
+        force_password_reset:
+          type: boolean
+          description: The flag to force the user to reset the password.
+        marketing_emails:
+          type: boolean
+          description: The flag to receive marketing emails.
+      type: object
+    Team:
+      description: Team model
+      properties:
+        id:
+          type: integer
+          description: The unique identifier of the team.
+        name:
+          type: string
+          description: The name of the team.
+        description:
+          type: string
+          description: The description of the team.
+        personal_team:
+          type: boolean
+          description: Whether the team is personal or not.
+        created_at:
+          type: string
+          description: The date and time the team was created.
+        updated_at:
+          type: string
+          description: The date and time the team was last updated.
+        show_boarding:
+          type: boolean
+          description: Whether to show the boarding screen or not.
+        custom_server_limit:
+          type: string
+          description: The custom server limit.
+        members:
+          description: The members of the team.
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+      type: object
+  responses:
+    '400':
+      description: Invalid token.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Invalid token.
+            type: object
+    '404':
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Resource not found.
+            type: object
+    '401':
+      description: Unauthenticated.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Unauthenticated.
+            type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: Go to `Keys & Tokens` / `API tokens` and create a new token. Use the token as the bearer token.
+      scheme: bearer

@@ -1,0 +1,72 @@
+openapi: 3.1.0
+info:
+  title: Coolify Applications Enable API
+  version: '0.1'
+  description: Applications
+servers:
+- url: https://app.coolify.io/api/v1
+  description: Coolify Cloud API. Change the host to your own instance if you are self-hosting.
+tags:
+- name: Enable
+paths:
+  /enable:
+    get:
+      summary: Enable API
+      description: Enable API (only with root permissions).
+      operationId: enable-api
+      responses:
+        '200':
+          description: Enable API.
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: API enabled.
+                type: object
+        '403':
+          description: You are not allowed to enable the API.
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: You are not allowed to enable the API.
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+      security:
+      - bearerAuth: []
+      tags:
+      - Enable
+components:
+  responses:
+    '400':
+      description: Invalid token.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Invalid token.
+            type: object
+    '401':
+      description: Unauthenticated.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Unauthenticated.
+            type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: Go to `Keys & Tokens` / `API tokens` and create a new token. Use the token as the bearer token.
+      scheme: bearer

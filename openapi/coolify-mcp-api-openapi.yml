@@ -1,0 +1,106 @@
+openapi: 3.1.0
+info:
+  title: Coolify Applications Mcp API
+  version: '0.1'
+  description: Applications
+servers:
+- url: https://app.coolify.io/api/v1
+  description: Coolify Cloud API. Change the host to your own instance if you are self-hosting.
+tags:
+- name: Mcp
+paths:
+  /mcp/enable:
+    post:
+      summary: Enable MCP Server
+      description: Enable the MCP server endpoint at /mcp (only with root permissions).
+      operationId: enable-mcp
+      responses:
+        '200':
+          description: MCP server enabled.
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: MCP server enabled.
+                type: object
+        '403':
+          description: You are not allowed to enable the MCP server.
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: You are not allowed to enable the MCP server.
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+      security:
+      - bearerAuth: []
+      tags:
+      - Mcp
+  /mcp/disable:
+    post:
+      summary: Disable MCP Server
+      description: Disable the MCP server endpoint at /mcp (only with root permissions).
+      operationId: disable-mcp
+      responses:
+        '200':
+          description: MCP server disabled.
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: MCP server disabled.
+                type: object
+        '403':
+          description: You are not allowed to disable the MCP server.
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: You are not allowed to disable the MCP server.
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+      security:
+      - bearerAuth: []
+      tags:
+      - Mcp
+components:
+  responses:
+    '400':
+      description: Invalid token.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Invalid token.
+            type: object
+    '401':
+      description: Unauthenticated.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Unauthenticated.
+            type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: Go to `Keys & Tokens` / `API tokens` and create a new token. Use the token as the bearer token.
+      scheme: bearer

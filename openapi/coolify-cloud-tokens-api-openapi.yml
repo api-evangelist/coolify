@@ -1,0 +1,314 @@
+openapi: 3.1.0
+info:
+  title: Coolify Applications Cloud Tokens API
+  version: '0.1'
+  description: Applications
+servers:
+- url: https://app.coolify.io/api/v1
+  description: Coolify Cloud API. Change the host to your own instance if you are self-hosting.
+tags:
+- name: Cloud Tokens
+  description: Cloud Tokens
+paths:
+  /cloud-tokens:
+    get:
+      tags:
+      - Cloud Tokens
+      summary: List Cloud Provider Tokens
+      description: List all cloud provider tokens for the authenticated team.
+      operationId: list-cloud-tokens
+      responses:
+        '200':
+          description: Get all cloud provider tokens.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    uuid:
+                      type: string
+                    name:
+                      type: string
+                    provider:
+                      type: string
+                      enum:
+                      - hetzner
+                      - digitalocean
+                    team_id:
+                      type: integer
+                    servers_count:
+                      type: integer
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+                  type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+      security:
+      - bearerAuth: []
+    post:
+      tags:
+      - Cloud Tokens
+      summary: Create Cloud Provider Token
+      description: Create a new cloud provider token. The token will be validated before being stored.
+      operationId: create-cloud-token
+      requestBody:
+        description: Cloud provider token details
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+              - provider
+              - token
+              - name
+              properties:
+                provider:
+                  type: string
+                  enum:
+                  - hetzner
+                  - digitalocean
+                  example: hetzner
+                  description: The cloud provider.
+                token:
+                  type: string
+                  example: your-api-token-here
+                  description: The API token for the cloud provider.
+                name:
+                  type: string
+                  example: My Hetzner Token
+                  description: A friendly name for the token.
+              type: object
+      responses:
+        '201':
+          description: Cloud provider token created.
+          content:
+            application/json:
+              schema:
+                properties:
+                  uuid:
+                    type: string
+                    example: og888os
+                    description: The UUID of the token.
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '422':
+          $ref: '#/components/responses/422'
+      security:
+      - bearerAuth: []
+  /cloud-tokens/{uuid}:
+    get:
+      tags:
+      - Cloud Tokens
+      summary: Get Cloud Provider Token
+      description: Get cloud provider token by UUID.
+      operationId: get-cloud-token-by-uuid
+      parameters:
+      - name: uuid
+        in: path
+        description: Token UUID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Get cloud provider token by UUID
+          content:
+            application/json:
+              schema:
+                properties:
+                  uuid:
+                    type: string
+                  name:
+                    type: string
+                  provider:
+                    type: string
+                  team_id:
+                    type: integer
+                  servers_count:
+                    type: integer
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+      security:
+      - bearerAuth: []
+    delete:
+      tags:
+      - Cloud Tokens
+      summary: Delete Cloud Provider Token
+      description: Delete cloud provider token by UUID. Cannot delete if token is used by any servers.
+      operationId: delete-cloud-token-by-uuid
+      parameters:
+      - name: uuid
+        in: path
+        description: UUID of the cloud provider token.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Cloud provider token deleted.
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: Cloud provider token deleted.
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+      security:
+      - bearerAuth: []
+    patch:
+      tags:
+      - Cloud Tokens
+      summary: Update Cloud Provider Token
+      description: Update cloud provider token name.
+      operationId: update-cloud-token-by-uuid
+      parameters:
+      - name: uuid
+        in: path
+        description: Token UUID
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Cloud provider token updated.
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                name:
+                  type: string
+                  description: The friendly name for the token.
+              type: object
+      responses:
+        '200':
+          description: Cloud provider token updated.
+          content:
+            application/json:
+              schema:
+                properties:
+                  uuid:
+                    type: string
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+        '422':
+          $ref: '#/components/responses/422'
+      security:
+      - bearerAuth: []
+  /cloud-tokens/{uuid}/validate:
+    post:
+      tags:
+      - Cloud Tokens
+      summary: Validate Cloud Provider Token
+      description: Validate a cloud provider token against the provider API.
+      operationId: validate-cloud-token-by-uuid
+      parameters:
+      - name: uuid
+        in: path
+        description: Token UUID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Token validation result.
+          content:
+            application/json:
+              schema:
+                properties:
+                  valid:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: Token is valid.
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+      security:
+      - bearerAuth: []
+components:
+  responses:
+    '404':
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Resource not found.
+            type: object
+    '422':
+      description: Validation error.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Validation error.
+              errors:
+                type: object
+                example:
+                  name:
+                  - The name field is required.
+                  api_url:
+                  - The api url field is required.
+                  - The api url format is invalid.
+                additionalProperties:
+                  type: array
+                  items:
+                    type: string
+            type: object
+    '400':
+      description: Invalid token.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Invalid token.
+            type: object
+    '401':
+      description: Unauthenticated.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Unauthenticated.
+            type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: Go to `Keys & Tokens` / `API tokens` and create a new token. Use the token as the bearer token.
+      scheme: bearer

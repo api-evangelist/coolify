@@ -1,0 +1,575 @@
+openapi: 3.1.0
+info:
+  title: Coolify Applications Servers API
+  version: '0.1'
+  description: Applications
+servers:
+- url: https://app.coolify.io/api/v1
+  description: Coolify Cloud API. Change the host to your own instance if you are self-hosting.
+tags:
+- name: Servers
+  description: Servers
+paths:
+  /servers:
+    get:
+      tags:
+      - Servers
+      summary: List
+      description: List all servers.
+      operationId: list-servers
+      responses:
+        '200':
+          description: Get all servers.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Server'
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+      security:
+      - bearerAuth: []
+    post:
+      tags:
+      - Servers
+      summary: Create
+      description: Create Server.
+      operationId: create-server
+      requestBody:
+        description: Server created.
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                name:
+                  type: string
+                  example: My Server
+                  description: The name of the server.
+                description:
+                  type: string
+                  example: My Server Description
+                  description: The description of the server.
+                ip:
+                  type: string
+                  example: 127.0.0.1
+                  description: The IP of the server.
+                port:
+                  type: integer
+                  example: 22
+                  description: The port of the server.
+                user:
+                  type: string
+                  example: root
+                  description: The user of the server.
+                private_key_uuid:
+                  type: string
+                  example: og888os
+                  description: The UUID of the private key.
+                is_build_server:
+                  type: boolean
+                  example: false
+                  description: Is build server.
+                instant_validate:
+                  type: boolean
+                  example: false
+                  description: Instant validate.
+                proxy_type:
+                  type: string
+                  enum:
+                  - traefik
+                  - caddy
+                  - none
+                  example: traefik
+                  description: The proxy type.
+              type: object
+      responses:
+        '201':
+          description: Server created.
+          content:
+            application/json:
+              schema:
+                properties:
+                  uuid:
+                    type: string
+                    example: og888os
+                    description: The UUID of the server.
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '422':
+          $ref: '#/components/responses/422'
+      security:
+      - bearerAuth: []
+  /servers/{uuid}:
+    get:
+      tags:
+      - Servers
+      summary: Get
+      description: Get server by UUID.
+      operationId: get-server-by-uuid
+      parameters:
+      - name: uuid
+        in: path
+        description: Server's UUID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Get server by UUID
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server'
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+      security:
+      - bearerAuth: []
+    delete:
+      tags:
+      - Servers
+      summary: Delete
+      description: Delete server by UUID.
+      operationId: delete-server-by-uuid
+      parameters:
+      - name: uuid
+        in: path
+        description: UUID of the server.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Server deleted.
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: Server deleted.
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '422':
+          $ref: '#/components/responses/422'
+      security:
+      - bearerAuth: []
+    patch:
+      tags:
+      - Servers
+      summary: Update
+      description: Update Server.
+      operationId: update-server-by-uuid
+      parameters:
+      - name: uuid
+        in: path
+        description: Server UUID
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Server updated.
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                name:
+                  type: string
+                  description: The name of the server.
+                description:
+                  type: string
+                  description: The description of the server.
+                ip:
+                  type: string
+                  description: The IP of the server.
+                port:
+                  type: integer
+                  description: The port of the server.
+                user:
+                  type: string
+                  description: The user of the server.
+                private_key_uuid:
+                  type: string
+                  description: The UUID of the private key.
+                is_build_server:
+                  type: boolean
+                  description: Is build server.
+                instant_validate:
+                  type: boolean
+                  description: Instant validate.
+                proxy_type:
+                  type: string
+                  enum:
+                  - traefik
+                  - caddy
+                  - none
+                  description: The proxy type.
+                concurrent_builds:
+                  type: integer
+                  description: Number of concurrent builds.
+                dynamic_timeout:
+                  type: integer
+                  description: Deployment timeout in seconds.
+                deployment_queue_limit:
+                  type: integer
+                  description: Maximum number of queued deployments.
+                server_disk_usage_notification_threshold:
+                  type: integer
+                  description: Server disk usage notification threshold (%).
+                server_disk_usage_check_frequency:
+                  type: string
+                  description: Cron expression for disk usage check frequency.
+                connection_timeout:
+                  type: integer
+                  description: 'SSH connection timeout in seconds (1-300). Default: 10.'
+              type: object
+      responses:
+        '201':
+          description: Server updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server'
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '422':
+          $ref: '#/components/responses/422'
+      security:
+      - bearerAuth: []
+  /servers/{uuid}/resources:
+    get:
+      tags:
+      - Servers
+      summary: Resources
+      description: Get resources by server.
+      operationId: get-resources-by-server-uuid
+      parameters:
+      - name: uuid
+        in: path
+        description: Server's UUID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Get resources by server
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: integer
+                    uuid:
+                      type: string
+                    name:
+                      type: string
+                    type:
+                      type: string
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+                    status:
+                      type: string
+                  type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+      security:
+      - bearerAuth: []
+  /servers/{uuid}/domains:
+    get:
+      tags:
+      - Servers
+      summary: Domains
+      description: Get domains by server.
+      operationId: get-domains-by-server-uuid
+      parameters:
+      - name: uuid
+        in: path
+        description: Server's UUID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Get domains by server
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    ip:
+                      type: string
+                    domains:
+                      type: array
+                      items:
+                        type: string
+                  type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+      security:
+      - bearerAuth: []
+  /servers/{uuid}/validate:
+    get:
+      tags:
+      - Servers
+      summary: Validate
+      description: Validate server by UUID.
+      operationId: validate-server-by-uuid
+      parameters:
+      - name: uuid
+        in: path
+        description: Server UUID
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Server validation started.
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: Validation started.
+                type: object
+        '401':
+          $ref: '#/components/responses/401'
+        '400':
+          $ref: '#/components/responses/400'
+        '404':
+          $ref: '#/components/responses/404'
+        '422':
+          $ref: '#/components/responses/422'
+      security:
+      - bearerAuth: []
+components:
+  schemas:
+    Server:
+      description: Server model
+      properties:
+        id:
+          type: integer
+          description: The server ID.
+        uuid:
+          type: string
+          description: The server UUID.
+        name:
+          type: string
+          description: The server name.
+        description:
+          type: string
+          description: The server description.
+        ip:
+          type: string
+          description: The IP address.
+        user:
+          type: string
+          description: The user.
+        port:
+          type: integer
+          description: The port number.
+        proxy:
+          type: object
+          description: The proxy configuration.
+        proxy_type:
+          type: string
+          enum:
+          - traefik
+          - caddy
+          - none
+          description: The proxy type.
+        high_disk_usage_notification_sent:
+          type: boolean
+          description: The flag to indicate if the high disk usage notification has been sent.
+        unreachable_notification_sent:
+          type: boolean
+          description: The flag to indicate if the unreachable notification has been sent.
+        unreachable_count:
+          type: integer
+          description: The unreachable count for your server.
+        validation_logs:
+          type: string
+          description: The validation logs.
+        log_drain_notification_sent:
+          type: boolean
+          description: The flag to indicate if the log drain notification has been sent.
+        swarm_cluster:
+          type: string
+          description: The swarm cluster configuration.
+        settings:
+          $ref: '#/components/schemas/ServerSetting'
+      type: object
+    ServerSetting:
+      description: Server Settings model
+      properties:
+        id:
+          type: integer
+        concurrent_builds:
+          type: integer
+        deployment_queue_limit:
+          type: integer
+        dynamic_timeout:
+          type: integer
+        force_disabled:
+          type: boolean
+        force_server_cleanup:
+          type: boolean
+        is_build_server:
+          type: boolean
+        is_cloudflare_tunnel:
+          type: boolean
+        is_jump_server:
+          type: boolean
+        is_logdrain_axiom_enabled:
+          type: boolean
+        is_logdrain_custom_enabled:
+          type: boolean
+        is_logdrain_highlight_enabled:
+          type: boolean
+        is_logdrain_newrelic_enabled:
+          type: boolean
+        is_metrics_enabled:
+          type: boolean
+        is_reachable:
+          type: boolean
+        is_sentinel_enabled:
+          type: boolean
+        is_swarm_manager:
+          type: boolean
+        is_swarm_worker:
+          type: boolean
+        is_terminal_enabled:
+          type: boolean
+        is_usable:
+          type: boolean
+        logdrain_axiom_api_key:
+          type: string
+        logdrain_axiom_dataset_name:
+          type: string
+        logdrain_custom_config:
+          type: string
+        logdrain_custom_config_parser:
+          type: string
+        logdrain_highlight_project_id:
+          type: string
+        logdrain_newrelic_base_uri:
+          type: string
+        logdrain_newrelic_license_key:
+          type: string
+        sentinel_metrics_history_days:
+          type: integer
+        sentinel_metrics_refresh_rate_seconds:
+          type: integer
+        sentinel_token:
+          type: string
+        docker_cleanup_frequency:
+          type: string
+        docker_cleanup_threshold:
+          type: integer
+        server_id:
+          type: integer
+        wildcard_domain:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        delete_unused_volumes:
+          type: boolean
+          description: The flag to indicate if the unused volumes should be deleted.
+        delete_unused_networks:
+          type: boolean
+          description: The flag to indicate if the unused networks should be deleted.
+        connection_timeout:
+          type: integer
+          description: SSH connection timeout in seconds.
+      type: object
+  responses:
+    '400':
+      description: Invalid token.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Invalid token.
+            type: object
+    '404':
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Resource not found.
+            type: object
+    '401':
+      description: Unauthenticated.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Unauthenticated.
+            type: object
+    '422':
+      description: Validation error.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Validation error.
+              errors:
+                type: object
+                example:
+                  name:
+                  - The name field is required.
+                  api_url:
+                  - The api url field is required.
+                  - The api url format is invalid.
+                additionalProperties:
+                  type: array
+                  items:
+                    type: string
+            type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: Go to `Keys & Tokens` / `API tokens` and create a new token. Use the token as the bearer token.
+      scheme: bearer
