@@ -5,7 +5,19 @@ description: Coolify is an open-source, self-hostable Platform-as-a-Service alte
   280+ one-click services to any SSH-accessible server (VPS, bare-metal, Raspberry Pi, EC2, Hetzner, DigitalOcean)
   while keeping every configuration value, deployment, and dataset on infrastructure you own.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/coolify.png
 url: https://raw.githubusercontent.com/api-evangelist/coolify/refs/heads/main/apis.yml
 created: '2026-05-25'
 modified: '2026-05-25'
@@ -34,36 +46,299 @@ apis:
     type: Documentation
   - url: https://github.com/coollabsio/coolify
     type: SourceCode
-  description: The Coolify platform - an open-source, Apache-2.0 licensed, self-hostable PaaS written in
-    PHP (Laravel) that automates deployment of applications, databases, and services to user-controlled
-    servers via Docker and Docker Compose. Includes free SSL, scheduled backups to S3, pull-request previews,
-    real-time logs, and a team-based RBAC model.
-- aid: coolify:coolify-rest-api
-  name: Coolify REST API
+  description: >-
+    The Coolify platform - an open-source, Apache-2.0 licensed, self-hostable PaaS written in PHP (Laravel)
+    that automates deployment of applications, databases, and services to user-controlled servers via
+    Docker and Docker Compose. Includes free SSL, scheduled backups to S3, pull-request previews, real-time
+    logs, and a team-based RBAC model.
+- aid: coolify:coolify-applications-api
+  name: Coolify Applications API
+  description: Applications
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
   tags:
   - Applications
-  - Databases
-  - Servers
-  - Services
-  - Deployments
-  - Projects
-  - Teams
-  humanURL: https://coolify.io/docs/api-reference/authorization
-  baseURL: https://app.coolify.io/api/v1
   properties:
-  - url: https://coolify.io/docs/api-reference/authorization
-    type: Documentation
-  - url: https://coolify.io/docs/api-reference/applications/list
-    type: Reference
-  - url: https://coolify.io/docs/api-reference/authorization
-    type: Authentication
-  - url: https://raw.githubusercontent.com/api-evangelist/coolify/refs/heads/main/openapi/coolify-openapi.yml
-    type: OpenAPI
-  description: The Coolify REST API provides programmatic access to every resource managed by a Coolify
-    instance - applications, databases, services, deployments, servers, projects, environments, teams,
-    private keys, GitHub Apps, cloud-provider tokens, scheduled tasks, and Hetzner provisioning. The API
-    is served at /api/v1 by both Coolify Cloud (app.coolify.io) and every self-hosted instance, authenticated
-    with team-scoped Bearer tokens issued through Keys & Tokens.
+  - type: OpenAPI
+    url: openapi/coolify-applications-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-cloud-tokens-api
+  name: Coolify Cloud Tokens API
+  description: Cloud Tokens
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Cloud Tokens
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-cloud-tokens-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-databases-api
+  name: Coolify Databases API
+  description: Databases
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Databases
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-databases-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-deployments-api
+  name: Coolify Deployments API
+  description: Deployments
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Deployments
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-deployments-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-disable-api
+  name: Coolify Disable API
+  description: The Disable API from Coolify — 1 operation(s) for disable.
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Disable
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-disable-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-enable-api
+  name: Coolify Enable API
+  description: The Enable API from Coolify — 1 operation(s) for enable.
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Enable
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-enable-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-github-apps-api
+  name: Coolify GitHub Apps API
+  description: GitHub Apps
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - GitHub Apps
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-github-apps-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-health-api
+  name: Coolify Health API
+  description: The Health API from Coolify — 1 operation(s) for health.
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Health
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-health-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-hetzner-api
+  name: Coolify Hetzner API
+  description: Hetzner
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Hetzner
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-hetzner-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-mcp-api
+  name: Coolify Mcp API
+  description: The Mcp API from Coolify — 2 operation(s) for mcp.
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Mcp
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-mcp-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-private-keys-api
+  name: Coolify Private Keys API
+  description: Private Keys
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Private Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-private-keys-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-projects-api
+  name: Coolify Projects API
+  description: Projects
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-projects-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-resources-api
+  name: Coolify Resources API
+  description: Resources
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Resources
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-resources-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-scheduled-tasks-api
+  name: Coolify Scheduled Tasks API
+  description: Scheduled Tasks
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Scheduled Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-scheduled-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-servers-api
+  name: Coolify Servers API
+  description: Servers
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Servers
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-servers-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-services-api
+  name: Coolify Services API
+  description: Services
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Services
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-services-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-teams-api
+  name: Coolify Teams API
+  description: Teams
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Teams
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-teams-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
+- aid: coolify:coolify-version-api
+  name: Coolify Version API
+  description: The Version API from Coolify — 1 operation(s) for version.
+  humanURL: https://coolify.io/
+  baseURL: https://app.coolify.io/api/v1
+  tags:
+  - Version
+  properties:
+  - type: OpenAPI
+    url: openapi/coolify-version-api-openapi.yml
+  - type: Documentation
+    url: https://coolify.io/docs/api-reference/authorization
+  - type: Reference
+    url: https://coolify.io/docs/api-reference/applications/list
+  - type: Authentication
+    url: https://coolify.io/docs/api-reference/authorization
 common:
 - type: AgenticAccess
   url: agentic-access/coolify-agentic-access.yml
