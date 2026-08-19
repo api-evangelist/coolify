@@ -1,0 +1,2194 @@
+{
+  "item": [
+    {
+      "id": "430e4f10-bb14-41d1-bd24-30d62f6ed154",
+      "name": "Servers",
+      "description": {
+        "content": "Servers",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fe21ef96-d253-4f72-94b5-16995b24522b",
+          "name": "List",
+          "request": {
+            "name": "List",
+            "description": {
+              "content": "List all servers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "servers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ed17341c-192e-4241-b939-6244307667b8",
+              "name": "Get all servers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3066,\n    \"uuid\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"ip\": \"string\",\n    \"user\": \"string\",\n    \"port\": 9421,\n    \"proxy\": {},\n    \"proxy_type\": \"traefik\",\n    \"high_disk_usage_notification_sent\": false,\n    \"unreachable_notification_sent\": true,\n    \"unreachable_count\": 4803,\n    \"validation_logs\": \"string\",\n    \"log_drain_notification_sent\": false,\n    \"swarm_cluster\": \"string\",\n    \"settings\": {\n      \"id\": 5444,\n      \"concurrent_builds\": 7143,\n      \"deployment_queue_limit\": 640,\n      \"dynamic_timeout\": 3669,\n      \"force_disabled\": true,\n      \"force_server_cleanup\": false,\n      \"is_build_server\": false,\n      \"is_cloudflare_tunnel\": false,\n      \"is_jump_server\": false,\n      \"is_logdrain_axiom_enabled\": true,\n      \"is_logdrain_custom_enabled\": false,\n      \"is_logdrain_highlight_enabled\": false,\n      \"is_logdrain_newrelic_enabled\": true,\n      \"is_metrics_enabled\": false,\n      \"is_reachable\": true,\n      \"is_sentinel_enabled\": true,\n      \"is_swarm_manager\": true,\n      \"is_swarm_worker\": false,\n      \"is_terminal_enabled\": false,\n      \"is_usable\": true,\n      \"logdrain_axiom_api_key\": \"string\",\n      \"logdrain_axiom_dataset_name\": \"string\",\n      \"logdrain_custom_config\": \"string\",\n      \"logdrain_custom_config_parser\": \"string\",\n      \"logdrain_highlight_project_id\": \"string\",\n      \"logdrain_newrelic_base_uri\": \"string\",\n      \"logdrain_newrelic_license_key\": \"string\",\n      \"sentinel_metrics_history_days\": 4196,\n      \"sentinel_metrics_refresh_rate_seconds\": 4216,\n      \"sentinel_token\": \"string\",\n      \"docker_cleanup_frequency\": \"string\",\n      \"docker_cleanup_threshold\": 4937,\n      \"server_id\": 1327,\n      \"wildcard_domain\": \"string\",\n      \"created_at\": \"string\",\n      \"updated_at\": \"string\",\n      \"delete_unused_volumes\": true,\n      \"delete_unused_networks\": true,\n      \"connection_timeout\": 4127\n    }\n  },\n  {\n    \"id\": 7969,\n    \"uuid\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"ip\": \"string\",\n    \"user\": \"string\",\n    \"port\": 1639,\n    \"proxy\": {},\n    \"proxy_type\": \"traefik\",\n    \"high_disk_usage_notification_sent\": true,\n    \"unreachable_notification_sent\": true,\n    \"unreachable_count\": 2878,\n    \"validation_logs\": \"string\",\n    \"log_drain_notification_sent\": true,\n    \"swarm_cluster\": \"string\",\n    \"settings\": {\n      \"id\": 1165,\n      \"concurrent_builds\": 3484,\n      \"deployment_queue_limit\": 5551,\n      \"dynamic_timeout\": 2728,\n      \"force_disabled\": false,\n      \"force_server_cleanup\": false,\n      \"is_build_server\": true,\n      \"is_cloudflare_tunnel\": true,\n      \"is_jump_server\": true,\n      \"is_logdrain_axiom_enabled\": false,\n      \"is_logdrain_custom_enabled\": false,\n      \"is_logdrain_highlight_enabled\": false,\n      \"is_logdrain_newrelic_enabled\": true,\n      \"is_metrics_enabled\": true,\n      \"is_reachable\": true,\n      \"is_sentinel_enabled\": false,\n      \"is_swarm_manager\": true,\n      \"is_swarm_worker\": false,\n      \"is_terminal_enabled\": true,\n      \"is_usable\": true,\n      \"logdrain_axiom_api_key\": \"string\",\n      \"logdrain_axiom_dataset_name\": \"string\",\n      \"logdrain_custom_config\": \"string\",\n      \"logdrain_custom_config_parser\": \"string\",\n      \"logdrain_highlight_project_id\": \"string\",\n      \"logdrain_newrelic_base_uri\": \"string\",\n      \"logdrain_newrelic_license_key\": \"string\",\n      \"sentinel_metrics_history_days\": 4843,\n      \"sentinel_metrics_refresh_rate_seconds\": 626,\n      \"sentinel_token\": \"string\",\n      \"docker_cleanup_frequency\": \"string\",\n      \"docker_cleanup_threshold\": 9138,\n      \"server_id\": 7121,\n      \"wildcard_domain\": \"string\",\n      \"created_at\": \"string\",\n      \"updated_at\": \"string\",\n      \"delete_unused_volumes\": false,\n      \"delete_unused_networks\": false,\n      \"connection_timeout\": 5953\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d7a85e5-c984-4dd7-ae59-c90e28f1f803",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8895433b-587b-4849-ab36-9ac1e661d914",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6789b9b8-9f69-4503-8eae-6ac4eed5cdb5",
+          "name": "Create",
+          "request": {
+            "name": "Create",
+            "description": {
+              "content": "Create Server.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "servers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ip\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"user\": \"<string>\",\n  \"private_key_uuid\": \"<string>\",\n  \"is_build_server\": \"<boolean>\",\n  \"instant_validate\": \"<boolean>\",\n  \"proxy_type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b934950d-e9a8-4345-bad9-bc0dce59cf9d",
+              "name": "Server created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"My Server\",\n  \"description\": \"My Server Description\",\n  \"ip\": \"127.0.0.1\",\n  \"port\": 22,\n  \"user\": \"root\",\n  \"private_key_uuid\": \"og888os\",\n  \"is_build_server\": false,\n  \"instant_validate\": false,\n  \"proxy_type\": \"traefik\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"og888os\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1783c305-1daf-4c3f-9eb7-9b0ddb9ddbae",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"My Server\",\n  \"description\": \"My Server Description\",\n  \"ip\": \"127.0.0.1\",\n  \"port\": 22,\n  \"user\": \"root\",\n  \"private_key_uuid\": \"og888os\",\n  \"is_build_server\": false,\n  \"instant_validate\": false,\n  \"proxy_type\": \"traefik\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3ffcc692-8f41-4f04-a038-3c2acb8e0fbc",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"My Server\",\n  \"description\": \"My Server Description\",\n  \"ip\": \"127.0.0.1\",\n  \"port\": 22,\n  \"user\": \"root\",\n  \"private_key_uuid\": \"og888os\",\n  \"is_build_server\": false,\n  \"instant_validate\": false,\n  \"proxy_type\": \"traefik\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "91cc4b41-ee49-4241-8407-fdb169072221",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"My Server\",\n  \"description\": \"My Server Description\",\n  \"ip\": \"127.0.0.1\",\n  \"port\": 22,\n  \"user\": \"root\",\n  \"private_key_uuid\": \"og888os\",\n  \"is_build_server\": false,\n  \"instant_validate\": false,\n  \"proxy_type\": \"traefik\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Resource not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e752df85-db01-41a1-8eee-40e677d7a23d",
+              "name": "Validation error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"My Server\",\n  \"description\": \"My Server Description\",\n  \"ip\": \"127.0.0.1\",\n  \"port\": 22,\n  \"user\": \"root\",\n  \"private_key_uuid\": \"og888os\",\n  \"is_build_server\": false,\n  \"instant_validate\": false,\n  \"proxy_type\": \"traefik\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Validation error.\",\n  \"errors\": {\n    \"name\": [\n      \"The name field is required.\"\n    ],\n    \"api_url\": [\n      \"The api url field is required.\",\n      \"The api url format is invalid.\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04369983-6c21-49ed-b9f2-7bbaba5e642c",
+          "name": "Get",
+          "request": {
+            "name": "Get",
+            "description": {
+              "content": "Get server by UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "servers",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) Server's UUID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9ba1b76d-3230-4dbe-8e25-0ebfdccc2fc1",
+              "name": "Get server by UUID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server's UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8325,\n  \"uuid\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"ip\": \"string\",\n  \"user\": \"string\",\n  \"port\": 8590,\n  \"proxy\": {},\n  \"proxy_type\": \"none\",\n  \"high_disk_usage_notification_sent\": true,\n  \"unreachable_notification_sent\": true,\n  \"unreachable_count\": 3841,\n  \"validation_logs\": \"string\",\n  \"log_drain_notification_sent\": true,\n  \"swarm_cluster\": \"string\",\n  \"settings\": {\n    \"id\": 4165,\n    \"concurrent_builds\": 4661,\n    \"deployment_queue_limit\": 5454,\n    \"dynamic_timeout\": 3593,\n    \"force_disabled\": true,\n    \"force_server_cleanup\": false,\n    \"is_build_server\": true,\n    \"is_cloudflare_tunnel\": false,\n    \"is_jump_server\": false,\n    \"is_logdrain_axiom_enabled\": true,\n    \"is_logdrain_custom_enabled\": true,\n    \"is_logdrain_highlight_enabled\": false,\n    \"is_logdrain_newrelic_enabled\": true,\n    \"is_metrics_enabled\": true,\n    \"is_reachable\": false,\n    \"is_sentinel_enabled\": false,\n    \"is_swarm_manager\": false,\n    \"is_swarm_worker\": true,\n    \"is_terminal_enabled\": true,\n    \"is_usable\": false,\n    \"logdrain_axiom_api_key\": \"string\",\n    \"logdrain_axiom_dataset_name\": \"string\",\n    \"logdrain_custom_config\": \"string\",\n    \"logdrain_custom_config_parser\": \"string\",\n    \"logdrain_highlight_project_id\": \"string\",\n    \"logdrain_newrelic_base_uri\": \"string\",\n    \"logdrain_newrelic_license_key\": \"string\",\n    \"sentinel_metrics_history_days\": 2795,\n    \"sentinel_metrics_refresh_rate_seconds\": 2932,\n    \"sentinel_token\": \"string\",\n    \"docker_cleanup_frequency\": \"string\",\n    \"docker_cleanup_threshold\": 313,\n    \"server_id\": 2346,\n    \"wildcard_domain\": \"string\",\n    \"created_at\": \"string\",\n    \"updated_at\": \"string\",\n    \"delete_unused_volumes\": true,\n    \"delete_unused_networks\": false,\n    \"connection_timeout\": 4786\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9e93a80b-3f29-4e7f-b54e-1bc9ab42b2fd",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server's UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0182a6a3-1fa3-4b16-88db-d6b47c0b4f55",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server's UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f1173d0-774e-4752-a17b-f59188413d3c",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server's UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Resource not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "52d8f7dc-6ca2-4165-addf-2de1f5dcd61a",
+          "name": "Delete",
+          "request": {
+            "name": "Delete",
+            "description": {
+              "content": "Delete server by UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "servers",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the server."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4eab8f31-e98f-4858-bff6-b0d8432789d2",
+              "name": "Server deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the server."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Server deleted.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "74921279-8b17-4854-9c10-053719006945",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the server."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3eca5ca5-82a1-4068-9a8a-1f8af2453c25",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the server."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da338ad6-be82-48b3-a170-65eb97816345",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the server."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Resource not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2517a5b1-ed36-41e7-a5d7-ffaaeaab1163",
+              "name": "Validation error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the server."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Validation error.\",\n  \"errors\": {\n    \"key_0\": [\n      \"string\",\n      \"string\"\n    ],\n    \"key_1\": [\n      \"string\",\n      \"string\"\n    ],\n    \"key_2\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0bdacfa3-f175-4861-8b74-186671f40be3",
+          "name": "Update",
+          "request": {
+            "name": "Update",
+            "description": {
+              "content": "Update Server.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "servers",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) Server UUID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ip\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"user\": \"<string>\",\n  \"private_key_uuid\": \"<string>\",\n  \"is_build_server\": \"<boolean>\",\n  \"instant_validate\": \"<boolean>\",\n  \"proxy_type\": \"<string>\",\n  \"concurrent_builds\": \"<integer>\",\n  \"dynamic_timeout\": \"<integer>\",\n  \"deployment_queue_limit\": \"<integer>\",\n  \"server_disk_usage_notification_threshold\": \"<integer>\",\n  \"server_disk_usage_check_frequency\": \"<string>\",\n  \"connection_timeout\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fcc53db3-d843-4256-96c0-28506483af0c",
+              "name": "Server updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ip\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"user\": \"<string>\",\n  \"private_key_uuid\": \"<string>\",\n  \"is_build_server\": \"<boolean>\",\n  \"instant_validate\": \"<boolean>\",\n  \"proxy_type\": \"<string>\",\n  \"concurrent_builds\": \"<integer>\",\n  \"dynamic_timeout\": \"<integer>\",\n  \"deployment_queue_limit\": \"<integer>\",\n  \"server_disk_usage_notification_threshold\": \"<integer>\",\n  \"server_disk_usage_check_frequency\": \"<string>\",\n  \"connection_timeout\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8325,\n  \"uuid\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"ip\": \"string\",\n  \"user\": \"string\",\n  \"port\": 8590,\n  \"proxy\": {},\n  \"proxy_type\": \"none\",\n  \"high_disk_usage_notification_sent\": true,\n  \"unreachable_notification_sent\": true,\n  \"unreachable_count\": 3841,\n  \"validation_logs\": \"string\",\n  \"log_drain_notification_sent\": true,\n  \"swarm_cluster\": \"string\",\n  \"settings\": {\n    \"id\": 4165,\n    \"concurrent_builds\": 4661,\n    \"deployment_queue_limit\": 5454,\n    \"dynamic_timeout\": 3593,\n    \"force_disabled\": true,\n    \"force_server_cleanup\": false,\n    \"is_build_server\": true,\n    \"is_cloudflare_tunnel\": false,\n    \"is_jump_server\": false,\n    \"is_logdrain_axiom_enabled\": true,\n    \"is_logdrain_custom_enabled\": true,\n    \"is_logdrain_highlight_enabled\": false,\n    \"is_logdrain_newrelic_enabled\": true,\n    \"is_metrics_enabled\": true,\n    \"is_reachable\": false,\n    \"is_sentinel_enabled\": false,\n    \"is_swarm_manager\": false,\n    \"is_swarm_worker\": true,\n    \"is_terminal_enabled\": true,\n    \"is_usable\": false,\n    \"logdrain_axiom_api_key\": \"string\",\n    \"logdrain_axiom_dataset_name\": \"string\",\n    \"logdrain_custom_config\": \"string\",\n    \"logdrain_custom_config_parser\": \"string\",\n    \"logdrain_highlight_project_id\": \"string\",\n    \"logdrain_newrelic_base_uri\": \"string\",\n    \"logdrain_newrelic_license_key\": \"string\",\n    \"sentinel_metrics_history_days\": 2795,\n    \"sentinel_metrics_refresh_rate_seconds\": 2932,\n    \"sentinel_token\": \"string\",\n    \"docker_cleanup_frequency\": \"string\",\n    \"docker_cleanup_threshold\": 313,\n    \"server_id\": 2346,\n    \"wildcard_domain\": \"string\",\n    \"created_at\": \"string\",\n    \"updated_at\": \"string\",\n    \"delete_unused_volumes\": true,\n    \"delete_unused_networks\": false,\n    \"connection_timeout\": 4786\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "931d99f6-04c9-4011-a1e6-1016c79d6a4b",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ip\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"user\": \"<string>\",\n  \"private_key_uuid\": \"<string>\",\n  \"is_build_server\": \"<boolean>\",\n  \"instant_validate\": \"<boolean>\",\n  \"proxy_type\": \"<string>\",\n  \"concurrent_builds\": \"<integer>\",\n  \"dynamic_timeout\": \"<integer>\",\n  \"deployment_queue_limit\": \"<integer>\",\n  \"server_disk_usage_notification_threshold\": \"<integer>\",\n  \"server_disk_usage_check_frequency\": \"<string>\",\n  \"connection_timeout\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c73b74dd-0400-4178-9913-444c17a150a7",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ip\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"user\": \"<string>\",\n  \"private_key_uuid\": \"<string>\",\n  \"is_build_server\": \"<boolean>\",\n  \"instant_validate\": \"<boolean>\",\n  \"proxy_type\": \"<string>\",\n  \"concurrent_builds\": \"<integer>\",\n  \"dynamic_timeout\": \"<integer>\",\n  \"deployment_queue_limit\": \"<integer>\",\n  \"server_disk_usage_notification_threshold\": \"<integer>\",\n  \"server_disk_usage_check_frequency\": \"<string>\",\n  \"connection_timeout\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2dd6ad94-88c2-4688-9973-0ea27a11c28d",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ip\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"user\": \"<string>\",\n  \"private_key_uuid\": \"<string>\",\n  \"is_build_server\": \"<boolean>\",\n  \"instant_validate\": \"<boolean>\",\n  \"proxy_type\": \"<string>\",\n  \"concurrent_builds\": \"<integer>\",\n  \"dynamic_timeout\": \"<integer>\",\n  \"deployment_queue_limit\": \"<integer>\",\n  \"server_disk_usage_notification_threshold\": \"<integer>\",\n  \"server_disk_usage_check_frequency\": \"<string>\",\n  \"connection_timeout\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Resource not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4915474f-ebed-4a42-ba3a-b2376844dda4",
+              "name": "Validation error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ip\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"user\": \"<string>\",\n  \"private_key_uuid\": \"<string>\",\n  \"is_build_server\": \"<boolean>\",\n  \"instant_validate\": \"<boolean>\",\n  \"proxy_type\": \"<string>\",\n  \"concurrent_builds\": \"<integer>\",\n  \"dynamic_timeout\": \"<integer>\",\n  \"deployment_queue_limit\": \"<integer>\",\n  \"server_disk_usage_notification_threshold\": \"<integer>\",\n  \"server_disk_usage_check_frequency\": \"<string>\",\n  \"connection_timeout\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Validation error.\",\n  \"errors\": {\n    \"key_0\": [\n      \"string\",\n      \"string\"\n    ],\n    \"key_1\": [\n      \"string\",\n      \"string\"\n    ],\n    \"key_2\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9539e00a-7089-4fd4-a3de-7c13f66aad5b",
+          "name": "Resources",
+          "request": {
+            "name": "Resources",
+            "description": {
+              "content": "Get resources by server.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "servers",
+                ":uuid",
+                "resources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) Server's UUID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fe7aa02a-76a5-4173-acbc-360dcef967f2",
+              "name": "Get resources by server",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid",
+                    "resources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server's UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3261,\n    \"uuid\": \"string\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"created_at\": \"string\",\n    \"updated_at\": \"string\",\n    \"status\": \"string\"\n  },\n  {\n    \"id\": 8590,\n    \"uuid\": \"string\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"created_at\": \"string\",\n    \"updated_at\": \"string\",\n    \"status\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b53cbdab-7516-4264-9eed-48c57a489731",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid",
+                    "resources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server's UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "257c3dfc-da85-4cac-9d24-abe404511e31",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid",
+                    "resources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server's UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a23aa0e-6479-4068-a886-271f30baafab",
+          "name": "Domains",
+          "request": {
+            "name": "Domains",
+            "description": {
+              "content": "Get domains by server.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "servers",
+                ":uuid",
+                "domains"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) Server's UUID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "059320a3-6a12-49b8-b339-a8fbd9b005e7",
+              "name": "Get domains by server",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid",
+                    "domains"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server's UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"ip\": \"string\",\n    \"domains\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  {\n    \"ip\": \"string\",\n    \"domains\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6a756c2b-635a-4ae8-acc4-5198606a0593",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid",
+                    "domains"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server's UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b34d8acb-8061-4d17-b969-e2df33c959a2",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid",
+                    "domains"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server's UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0198a51-4fca-4cc9-ba09-97032581daef",
+          "name": "Validate",
+          "request": {
+            "name": "Validate",
+            "description": {
+              "content": "Validate server by UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "servers",
+                ":uuid",
+                "validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) Server UUID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a9ebe98a-3e17-4bec-9777-7e34aa47f432",
+              "name": "Server validation started.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Validation started.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6d966b66-e71a-41b1-b91c-09738c9bd051",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8601fab8-d67b-4a31-8cdd-2047565deca7",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ecfa50f4-3201-4cd2-81b2-759c0d8a4425",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Resource not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "111e5565-6fa1-4866-9d58-5fa3acc7ad2b",
+              "name": "Validation error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    ":uuid",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Server UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Validation error.\",\n  \"errors\": {\n    \"key_0\": [\n      \"string\",\n      \"string\"\n    ],\n    \"key_1\": [\n      \"string\",\n      \"string\"\n    ],\n    \"key_2\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.coolify.io/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9071df62-4795-4b7c-b155-bc1adb4c7c84",
+    "name": "Coolify Applications Servers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Applications",
+      "type": "text/plain"
+    }
+  }
+}

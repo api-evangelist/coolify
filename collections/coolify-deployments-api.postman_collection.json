@@ -1,0 +1,1318 @@
+{
+  "item": [
+    {
+      "id": "61491182-eb76-4d24-9114-1983698d0324",
+      "name": "Deployments",
+      "description": {
+        "content": "Deployments",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d9bd3985-b784-4d16-ad05-4144e12c6ee3",
+          "name": "List",
+          "request": {
+            "name": "List",
+            "description": {
+              "content": "List currently running deployments",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "deployments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5f334e33-9087-4f3d-a924-d476902057b0",
+              "name": "Get all currently running deployments.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 488,\n    \"application_id\": \"string\",\n    \"deployment_uuid\": \"string\",\n    \"pull_request_id\": 907,\n    \"docker_registry_image_tag\": \"string\",\n    \"configuration_hash\": \"string\",\n    \"configuration_snapshot\": {},\n    \"configuration_diff\": {},\n    \"force_rebuild\": false,\n    \"commit\": \"string\",\n    \"status\": \"string\",\n    \"is_webhook\": true,\n    \"is_api\": false,\n    \"created_at\": \"string\",\n    \"updated_at\": \"string\",\n    \"logs\": \"string\",\n    \"current_process_id\": \"string\",\n    \"restart_only\": false,\n    \"git_type\": \"string\",\n    \"server_id\": 5376,\n    \"application_name\": \"string\",\n    \"server_name\": \"string\",\n    \"deployment_url\": \"string\",\n    \"destination_id\": \"string\",\n    \"only_this_server\": false,\n    \"rollback\": true,\n    \"commit_message\": \"string\"\n  },\n  {\n    \"id\": 1725,\n    \"application_id\": \"string\",\n    \"deployment_uuid\": \"string\",\n    \"pull_request_id\": 3603,\n    \"docker_registry_image_tag\": \"string\",\n    \"configuration_hash\": \"string\",\n    \"configuration_snapshot\": {},\n    \"configuration_diff\": {},\n    \"force_rebuild\": false,\n    \"commit\": \"string\",\n    \"status\": \"string\",\n    \"is_webhook\": true,\n    \"is_api\": false,\n    \"created_at\": \"string\",\n    \"updated_at\": \"string\",\n    \"logs\": \"string\",\n    \"current_process_id\": \"string\",\n    \"restart_only\": false,\n    \"git_type\": \"string\",\n    \"server_id\": 584,\n    \"application_name\": \"string\",\n    \"server_name\": \"string\",\n    \"deployment_url\": \"string\",\n    \"destination_id\": \"string\",\n    \"only_this_server\": false,\n    \"rollback\": false,\n    \"commit_message\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "54922d35-dfd8-45f7-8378-0c70a3424e61",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8f0d01e-15cf-4f73-8df8-f107e96b0649",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "11f9f5f5-8065-4d95-97e5-eb32dcb7437b",
+          "name": "Get",
+          "request": {
+            "name": "Get",
+            "description": {
+              "content": "Get deployment by UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "deployments",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) Deployment UUID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "740fd5c1-473d-40ba-a268-b00ab66054c3",
+              "name": "Get deployment by UUID.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Deployment UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5549,\n  \"application_id\": \"string\",\n  \"deployment_uuid\": \"string\",\n  \"pull_request_id\": 3351,\n  \"docker_registry_image_tag\": \"string\",\n  \"configuration_hash\": \"string\",\n  \"configuration_snapshot\": {},\n  \"configuration_diff\": {},\n  \"force_rebuild\": true,\n  \"commit\": \"string\",\n  \"status\": \"string\",\n  \"is_webhook\": true,\n  \"is_api\": false,\n  \"created_at\": \"string\",\n  \"updated_at\": \"string\",\n  \"logs\": \"string\",\n  \"current_process_id\": \"string\",\n  \"restart_only\": false,\n  \"git_type\": \"string\",\n  \"server_id\": 6593,\n  \"application_name\": \"string\",\n  \"server_name\": \"string\",\n  \"deployment_url\": \"string\",\n  \"destination_id\": \"string\",\n  \"only_this_server\": false,\n  \"rollback\": true,\n  \"commit_message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6629903c-07c3-410f-8380-2f6d7e0beac1",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Deployment UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "137f9c00-f6d2-496e-a9f3-1b36a206f9ac",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Deployment UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4599bd39-5829-4630-b371-f884215b2503",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Deployment UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Resource not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f90aa8e5-e3a2-465c-b8c0-2a52c048e5eb",
+          "name": "Cancel",
+          "request": {
+            "name": "Cancel",
+            "description": {
+              "content": "Cancel a deployment by UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "deployments",
+                ":uuid",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) Deployment UUID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bb9f9d56-e8f1-4f95-9f12-5463a83db1c4",
+              "name": "Deployment cancelled successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments",
+                    ":uuid",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Deployment UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Deployment cancelled successfully.\",\n  \"deployment_uuid\": \"cm37r6cqj000008jm0veg5tkm\",\n  \"status\": \"cancelled-by-user\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d9858fb0-9913-46f3-88f2-4bf1d6f45a2a",
+              "name": "Deployment cannot be cancelled (already finished/failed/cancelled).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments",
+                    ":uuid",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Deployment UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Deployment cannot be cancelled. Current status: finished\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "50097d95-db21-43c2-8dd2-6cd76f27320c",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments",
+                    ":uuid",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Deployment UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "64221f18-1be7-485c-a27a-499b7121e9cb",
+              "name": "User doesn't have permission to cancel this deployment.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments",
+                    ":uuid",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Deployment UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"You do not have permission to cancel this deployment.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8b3a168-d283-4cfc-bcc2-c3cc7a3c9393",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments",
+                    ":uuid",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) Deployment UUID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Resource not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f8ab0ded-d17c-446e-bc3d-2efafde48ab0",
+          "name": "Deploy",
+          "request": {
+            "name": "Deploy",
+            "description": {
+              "content": "Deploy by tag or uuid. `Post` request also accepted with `uuid` and `tag` json body.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "deploy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "tag",
+                  "value": "<string>",
+                  "description": "Tag name(s). Comma separated list is also accepted."
+                },
+                {
+                  "disabled": false,
+                  "key": "uuid",
+                  "value": "<string>",
+                  "description": "Resource UUID(s). Comma separated list is also accepted."
+                },
+                {
+                  "disabled": false,
+                  "key": "force",
+                  "value": "<boolean>",
+                  "description": "Force rebuild (without cache)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pr",
+                  "value": "<integer>",
+                  "description": "Pull Request Id for deploying specific PR builds. Cannot be used with tag parameter."
+                },
+                {
+                  "disabled": false,
+                  "key": "pull_request_id",
+                  "value": "<integer>",
+                  "description": "Preview deployment identifier. Alias of pr."
+                },
+                {
+                  "disabled": false,
+                  "key": "docker_tag",
+                  "value": "<string>",
+                  "description": "Docker image tag for Docker Image preview deployments. Requires pull_request_id."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "56375a0c-6145-4e89-b96b-45d669f0cb73",
+              "name": "Get deployment(s) UUID's",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deploy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "tag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "force",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pr",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pull_request_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "docker_tag",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deployments\": [\n    {\n      \"message\": \"string\",\n      \"resource_uuid\": \"string\",\n      \"deployment_uuid\": \"string\"\n    },\n    {\n      \"message\": \"string\",\n      \"resource_uuid\": \"string\",\n      \"deployment_uuid\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6cef6a14-ee8a-47b8-b365-cf86a361c2cd",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deploy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "tag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "force",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pr",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pull_request_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "docker_tag",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d10ed595-9a6d-4bdc-a1ec-a05be187cdc4",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deploy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "tag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "force",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pr",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pull_request_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "docker_tag",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f69b402-b45f-421b-bfcc-ca9e3892f18e",
+          "name": "List application deployments",
+          "request": {
+            "name": "List application deployments",
+            "description": {
+              "content": "List application deployments by using the app uuid",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "deployments",
+                "applications",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0",
+                  "description": "Number of records to skip."
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10",
+                  "description": "Number of records to take."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the application."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "dbe1ec3c-0f7e-4afd-871d-2568fbe6d064",
+              "name": "List application deployments by using the app uuid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments",
+                    "applications",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the application."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 2515,\n    \"description\": \"string\",\n    \"repository_project_id\": 3803,\n    \"uuid\": \"string\",\n    \"name\": \"string\",\n    \"fqdn\": \"string\",\n    \"config_hash\": \"string\",\n    \"git_repository\": \"string\",\n    \"git_branch\": \"string\",\n    \"git_commit_sha\": \"string\",\n    \"git_full_url\": \"string\",\n    \"docker_registry_image_name\": \"string\",\n    \"docker_registry_image_tag\": \"string\",\n    \"build_pack\": \"railpack\",\n    \"static_image\": \"string\",\n    \"install_command\": \"string\",\n    \"build_command\": \"string\",\n    \"start_command\": \"string\",\n    \"ports_exposes\": \"string\",\n    \"ports_mappings\": \"string\",\n    \"custom_network_aliases\": \"string\",\n    \"base_directory\": \"string\",\n    \"publish_directory\": \"string\",\n    \"health_check_enabled\": true,\n    \"health_check_path\": \"string\",\n    \"health_check_port\": \"string\",\n    \"health_check_host\": \"string\",\n    \"health_check_method\": \"string\",\n    \"health_check_return_code\": 5089,\n    \"health_check_scheme\": \"string\",\n    \"health_check_response_text\": \"string\",\n    \"health_check_interval\": 9847,\n    \"health_check_timeout\": 9972,\n    \"health_check_retries\": 2567,\n    \"health_check_start_period\": 9912,\n    \"health_check_type\": \"cmd\",\n    \"health_check_command\": \"string\",\n    \"limits_memory\": \"string\",\n    \"limits_memory_swap\": \"string\",\n    \"limits_memory_swappiness\": 998,\n    \"limits_memory_reservation\": \"string\",\n    \"limits_cpus\": \"string\",\n    \"limits_cpuset\": \"string\",\n    \"limits_cpu_shares\": 3655,\n    \"status\": \"string\",\n    \"preview_url_template\": \"string\",\n    \"destination_type\": \"string\",\n    \"destination_id\": 3760,\n    \"source_id\": 9783,\n    \"private_key_id\": 3554,\n    \"environment_id\": 7979,\n    \"dockerfile\": \"string\",\n    \"dockerfile_location\": \"string\",\n    \"custom_labels\": \"string\",\n    \"dockerfile_target_build\": \"string\",\n    \"manual_webhook_secret_github\": \"string\",\n    \"manual_webhook_secret_gitlab\": \"string\",\n    \"manual_webhook_secret_bitbucket\": \"string\",\n    \"manual_webhook_secret_gitea\": \"string\",\n    \"docker_compose_location\": \"string\",\n    \"docker_compose\": \"string\",\n    \"docker_compose_raw\": \"string\",\n    \"docker_compose_domains\": \"string\",\n    \"docker_compose_custom_start_command\": \"string\",\n    \"docker_compose_custom_build_command\": \"string\",\n    \"swarm_replicas\": 1778,\n    \"swarm_placement_constraints\": \"string\",\n    \"custom_docker_run_options\": \"string\",\n    \"post_deployment_command\": \"string\",\n    \"post_deployment_command_container\": \"string\",\n    \"pre_deployment_command\": \"string\",\n    \"pre_deployment_command_container\": \"string\",\n    \"watch_paths\": \"string\",\n    \"custom_healthcheck_found\": true,\n    \"redirect\": \"non-www\",\n    \"created_at\": \"1982-07-28T08:34:15.355Z\",\n    \"updated_at\": \"1994-10-06T13:12:58.498Z\",\n    \"deleted_at\": \"2021-04-01T16:18:26.595Z\",\n    \"compose_parsing_version\": \"string\",\n    \"custom_nginx_configuration\": \"string\",\n    \"is_http_basic_auth_enabled\": true,\n    \"http_basic_auth_username\": \"string\",\n    \"http_basic_auth_password\": \"string\"\n  },\n  {\n    \"id\": 3784,\n    \"description\": \"string\",\n    \"repository_project_id\": 1726,\n    \"uuid\": \"string\",\n    \"name\": \"string\",\n    \"fqdn\": \"string\",\n    \"config_hash\": \"string\",\n    \"git_repository\": \"string\",\n    \"git_branch\": \"string\",\n    \"git_commit_sha\": \"string\",\n    \"git_full_url\": \"string\",\n    \"docker_registry_image_name\": \"string\",\n    \"docker_registry_image_tag\": \"string\",\n    \"build_pack\": \"railpack\",\n    \"static_image\": \"string\",\n    \"install_command\": \"string\",\n    \"build_command\": \"string\",\n    \"start_command\": \"string\",\n    \"ports_exposes\": \"string\",\n    \"ports_mappings\": \"string\",\n    \"custom_network_aliases\": \"string\",\n    \"base_directory\": \"string\",\n    \"publish_directory\": \"string\",\n    \"health_check_enabled\": false,\n    \"health_check_path\": \"string\",\n    \"health_check_port\": \"string\",\n    \"health_check_host\": \"string\",\n    \"health_check_method\": \"string\",\n    \"health_check_return_code\": 5462,\n    \"health_check_scheme\": \"string\",\n    \"health_check_response_text\": \"string\",\n    \"health_check_interval\": 7418,\n    \"health_check_timeout\": 3906,\n    \"health_check_retries\": 6847,\n    \"health_check_start_period\": 5379,\n    \"health_check_type\": \"http\",\n    \"health_check_command\": \"string\",\n    \"limits_memory\": \"string\",\n    \"limits_memory_swap\": \"string\",\n    \"limits_memory_swappiness\": 5842,\n    \"limits_memory_reservation\": \"string\",\n    \"limits_cpus\": \"string\",\n    \"limits_cpuset\": \"string\",\n    \"limits_cpu_shares\": 539,\n    \"status\": \"string\",\n    \"preview_url_template\": \"string\",\n    \"destination_type\": \"string\",\n    \"destination_id\": 7508,\n    \"source_id\": 1128,\n    \"private_key_id\": 2464,\n    \"environment_id\": 3681,\n    \"dockerfile\": \"string\",\n    \"dockerfile_location\": \"string\",\n    \"custom_labels\": \"string\",\n    \"dockerfile_target_build\": \"string\",\n    \"manual_webhook_secret_github\": \"string\",\n    \"manual_webhook_secret_gitlab\": \"string\",\n    \"manual_webhook_secret_bitbucket\": \"string\",\n    \"manual_webhook_secret_gitea\": \"string\",\n    \"docker_compose_location\": \"string\",\n    \"docker_compose\": \"string\",\n    \"docker_compose_raw\": \"string\",\n    \"docker_compose_domains\": \"string\",\n    \"docker_compose_custom_start_command\": \"string\",\n    \"docker_compose_custom_build_command\": \"string\",\n    \"swarm_replicas\": 9218,\n    \"swarm_placement_constraints\": \"string\",\n    \"custom_docker_run_options\": \"string\",\n    \"post_deployment_command\": \"string\",\n    \"post_deployment_command_container\": \"string\",\n    \"pre_deployment_command\": \"string\",\n    \"pre_deployment_command_container\": \"string\",\n    \"watch_paths\": \"string\",\n    \"custom_healthcheck_found\": false,\n    \"redirect\": \"non-www\",\n    \"created_at\": \"1957-03-04T12:19:23.211Z\",\n    \"updated_at\": \"2008-09-12T22:37:11.774Z\",\n    \"deleted_at\": \"1970-11-06T11:32:00.908Z\",\n    \"compose_parsing_version\": \"string\",\n    \"custom_nginx_configuration\": \"string\",\n    \"is_http_basic_auth_enabled\": true,\n    \"http_basic_auth_username\": \"string\",\n    \"http_basic_auth_password\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f575538c-3b89-41c9-a86b-51e061575567",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments",
+                    "applications",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the application."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ddd69507-df4c-4ce6-8aa5-46351aaeeefe",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deployments",
+                    "applications",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the application."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.coolify.io/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f7cac1a0-66b4-4bab-9b8f-d6598ad4a505",
+    "name": "Coolify Applications Deployments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Applications",
+      "type": "text/plain"
+    }
+  }
+}

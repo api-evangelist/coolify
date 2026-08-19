@@ -1,0 +1,617 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Coolify Applications API",
+    "version": "0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/applications",
+            "params": [
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query",
+                "description": "Filter applications by tag name."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List all applications."
+        },
+        {
+          "info": {
+            "name": "Create (Public)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.coolify.io/api/v1/applications/public",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create new application based on a public git repository."
+        },
+        {
+          "info": {
+            "name": "Create (Private - GH App)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.coolify.io/api/v1/applications/private-github-app",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create new application based on a private repository through a Github App."
+        },
+        {
+          "info": {
+            "name": "Create (Private - Deploy Key)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.coolify.io/api/v1/applications/private-deploy-key",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create new application based on a private repository through a Deploy Key."
+        },
+        {
+          "info": {
+            "name": "Create (Dockerfile without git)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.coolify.io/api/v1/applications/dockerfile",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create new application based on a simple Dockerfile (without git)."
+        },
+        {
+          "info": {
+            "name": "Create (Docker Image without git)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.coolify.io/api/v1/applications/dockerimage",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create new application based on a prebuilt docker image (without git)."
+        },
+        {
+          "info": {
+            "name": "Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get application by UUID."
+        },
+        {
+          "info": {
+            "name": "Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update application by UUID."
+        },
+        {
+          "info": {
+            "name": "Delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              },
+              {
+                "name": "delete_configurations",
+                "value": "",
+                "type": "query",
+                "description": "Delete configurations."
+              },
+              {
+                "name": "delete_volumes",
+                "value": "",
+                "type": "query",
+                "description": "Delete volumes."
+              },
+              {
+                "name": "docker_cleanup",
+                "value": "",
+                "type": "query",
+                "description": "Run docker cleanup."
+              },
+              {
+                "name": "delete_connected_networks",
+                "value": "",
+                "type": "query",
+                "description": "Delete connected networks."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete application by UUID."
+        },
+        {
+          "info": {
+            "name": "Get application logs.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/logs",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              },
+              {
+                "name": "lines",
+                "value": "",
+                "type": "query",
+                "description": "Number of lines to show from the end of the logs."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get application logs by UUID."
+        },
+        {
+          "info": {
+            "name": "List Envs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/envs",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List all envs by application UUID."
+        },
+        {
+          "info": {
+            "name": "Create Env",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/envs",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create env by application UUID."
+        },
+        {
+          "info": {
+            "name": "Update Env",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/envs",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update env by application UUID."
+        },
+        {
+          "info": {
+            "name": "Update Envs (Bulk)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/envs/bulk",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update multiple envs by application UUID."
+        },
+        {
+          "info": {
+            "name": "Delete Env",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/envs/:env_uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              },
+              {
+                "name": "env_uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the environment variable."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete env by UUID."
+        },
+        {
+          "info": {
+            "name": "Start",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/start",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              },
+              {
+                "name": "force",
+                "value": "",
+                "type": "query",
+                "description": "Force rebuild."
+              },
+              {
+                "name": "instant_deploy",
+                "value": "",
+                "type": "query",
+                "description": "Instant deploy (skip queuing)."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Start application. `Post` request is also accepted."
+        },
+        {
+          "info": {
+            "name": "Stop",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/stop",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              },
+              {
+                "name": "docker_cleanup",
+                "value": "",
+                "type": "query",
+                "description": "Perform docker cleanup (prune networks, volumes, etc.)."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Stop application. `Post` request is also accepted."
+        },
+        {
+          "info": {
+            "name": "Restart",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/restart",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Restart application. `Post` request is also accepted."
+        },
+        {
+          "info": {
+            "name": "List Storages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/storages",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List all persistent storages and file storages by application UUID."
+        },
+        {
+          "info": {
+            "name": "Create Storage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/storages",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a persistent storage or file storage for an application."
+        },
+        {
+          "info": {
+            "name": "Update Storage",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/storages",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update a persistent storage or file storage by application UUID."
+        },
+        {
+          "info": {
+            "name": "Delete Storage",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/storages/:storage_uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              },
+              {
+                "name": "storage_uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the storage."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a persistent storage or file storage by application UUID."
+        },
+        {
+          "info": {
+            "name": "Delete Preview Deployment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.coolify.io/api/v1/applications/:uuid/previews/:pull_request_id",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              },
+              {
+                "name": "pull_request_id",
+                "value": "",
+                "type": "path",
+                "description": "Pull request ID of the preview to delete."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a preview deployment for a pull request. Cancels active deployments, stops containers, removes volumes/networks, and deletes the preview record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

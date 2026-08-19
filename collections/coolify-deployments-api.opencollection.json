@@ -1,0 +1,167 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Coolify Applications Deployments API",
+    "version": "0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Deployments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/deployments",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List currently running deployments"
+        },
+        {
+          "info": {
+            "name": "Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/deployments/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "Deployment UUID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get deployment by UUID."
+        },
+        {
+          "info": {
+            "name": "Cancel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.coolify.io/api/v1/deployments/:uuid/cancel",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "Deployment UUID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Cancel a deployment by UUID."
+        },
+        {
+          "info": {
+            "name": "Deploy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/deploy",
+            "params": [
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query",
+                "description": "Tag name(s). Comma separated list is also accepted."
+              },
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "query",
+                "description": "Resource UUID(s). Comma separated list is also accepted."
+              },
+              {
+                "name": "force",
+                "value": "",
+                "type": "query",
+                "description": "Force rebuild (without cache)"
+              },
+              {
+                "name": "pr",
+                "value": "",
+                "type": "query",
+                "description": "Pull Request Id for deploying specific PR builds. Cannot be used with tag parameter."
+              },
+              {
+                "name": "pull_request_id",
+                "value": "",
+                "type": "query",
+                "description": "Preview deployment identifier. Alias of pr."
+              },
+              {
+                "name": "docker_tag",
+                "value": "",
+                "type": "query",
+                "description": "Docker image tag for Docker Image preview deployments. Requires pull_request_id."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Deploy by tag or uuid. `Post` request also accepted with `uuid` and `tag` json body."
+        },
+        {
+          "info": {
+            "name": "List application deployments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/deployments/applications/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the application."
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip."
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to take."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List application deployments by using the app uuid"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

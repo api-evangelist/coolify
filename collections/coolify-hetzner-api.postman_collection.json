@@ -1,0 +1,1271 @@
+{
+  "item": [
+    {
+      "id": "a6a2034a-9dde-4c9a-afaf-dbbb2647e492",
+      "name": "Hetzner",
+      "description": {
+        "content": "Hetzner",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "30079f37-8c79-499a-98cf-614da76068f2",
+          "name": "Get Hetzner Locations",
+          "request": {
+            "name": "Get Hetzner Locations",
+            "description": {
+              "content": "Get all available Hetzner datacenter locations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hetzner",
+                "locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cloud_provider_token_uuid",
+                  "value": "<string>",
+                  "description": "Cloud provider token UUID. Required if cloud_provider_token_id is not provided."
+                },
+                {
+                  "disabled": false,
+                  "key": "cloud_provider_token_id",
+                  "value": "<string>",
+                  "description": "Deprecated: Use cloud_provider_token_uuid instead. Cloud provider token UUID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6de5e0f0-7e8e-44b9-91e4-8cdac0292490",
+              "name": "List of Hetzner locations.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hetzner",
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cloud_provider_token_uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cloud_provider_token_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 9557,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"latitude\": 6145.27918526472,\n    \"longitude\": 2078.074531668811\n  },\n  {\n    \"id\": 8713,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"latitude\": 3859.7654246187763,\n    \"longitude\": 2808.1905308127243\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b34a4e4-ab72-46a2-ac55-fdaad12e04d3",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hetzner",
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cloud_provider_token_uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cloud_provider_token_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "de7394d7-fbda-40af-9ab7-b5c2acf27f79",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hetzner",
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cloud_provider_token_uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cloud_provider_token_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Resource not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7fc34187-d906-42c6-89eb-ceaa90594fa7",
+          "name": "Get Hetzner Server Types",
+          "request": {
+            "name": "Get Hetzner Server Types",
+            "description": {
+              "content": "Get all available Hetzner server types (instance sizes).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hetzner",
+                "server-types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cloud_provider_token_uuid",
+                  "value": "<string>",
+                  "description": "Cloud provider token UUID. Required if cloud_provider_token_id is not provided."
+                },
+                {
+                  "disabled": false,
+                  "key": "cloud_provider_token_id",
+                  "value": "<string>",
+                  "description": "Deprecated: Use cloud_provider_token_uuid instead. Cloud provider token UUID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a5c1881b-b959-44f2-87fe-6a522cf866d6",
+              "name": "List of Hetzner server types.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hetzner",
+                    "server-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cloud_provider_token_uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cloud_provider_token_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 9895,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"cores\": 7447,\n    \"memory\": 9235.748355323427,\n    \"disk\": 8345,\n    \"prices\": [\n      {\n        \"location\": \"string\",\n        \"price_hourly\": {\n          \"net\": \"string\",\n          \"gross\": \"string\"\n        },\n        \"price_monthly\": {\n          \"net\": \"string\",\n          \"gross\": \"string\"\n        }\n      },\n      {\n        \"location\": \"string\",\n        \"price_hourly\": {\n          \"net\": \"string\",\n          \"gross\": \"string\"\n        },\n        \"price_monthly\": {\n          \"net\": \"string\",\n          \"gross\": \"string\"\n        }\n      }\n    ]\n  },\n  {\n    \"id\": 703,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"cores\": 916,\n    \"memory\": 2545.4946133651524,\n    \"disk\": 9884,\n    \"prices\": [\n      {\n        \"location\": \"string\",\n        \"price_hourly\": {\n          \"net\": \"string\",\n          \"gross\": \"string\"\n        },\n        \"price_monthly\": {\n          \"net\": \"string\",\n          \"gross\": \"string\"\n        }\n      },\n      {\n        \"location\": \"string\",\n        \"price_hourly\": {\n          \"net\": \"string\",\n          \"gross\": \"string\"\n        },\n        \"price_monthly\": {\n          \"net\": \"string\",\n          \"gross\": \"string\"\n        }\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2e003199-78a7-424d-b97b-4a98f3d9e054",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hetzner",
+                    "server-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cloud_provider_token_uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cloud_provider_token_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "979dd303-8d1e-400b-9c32-8ece5979ef2b",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hetzner",
+                    "server-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cloud_provider_token_uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cloud_provider_token_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Resource not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "45b2572e-a2d5-4abd-bea9-719e180552be",
+          "name": "Get Hetzner Images",
+          "request": {
+            "name": "Get Hetzner Images",
+            "description": {
+              "content": "Get all available Hetzner system images (operating systems).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hetzner",
+                "images"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cloud_provider_token_uuid",
+                  "value": "<string>",
+                  "description": "Cloud provider token UUID. Required if cloud_provider_token_id is not provided."
+                },
+                {
+                  "disabled": false,
+                  "key": "cloud_provider_token_id",
+                  "value": "<string>",
+                  "description": "Deprecated: Use cloud_provider_token_uuid instead. Cloud provider token UUID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1ad8953e-1d7c-46c2-a82a-bec48ad0e6c4",
+              "name": "List of Hetzner images.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hetzner",
+                    "images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cloud_provider_token_uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cloud_provider_token_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 1440,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"type\": \"string\",\n    \"os_flavor\": \"string\",\n    \"os_version\": \"string\",\n    \"architecture\": \"string\"\n  },\n  {\n    \"id\": 7769,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"type\": \"string\",\n    \"os_flavor\": \"string\",\n    \"os_version\": \"string\",\n    \"architecture\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bbb15100-aadc-4444-938d-f116d12448b9",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hetzner",
+                    "images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cloud_provider_token_uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cloud_provider_token_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d5232e95-ef7e-47d8-9832-6c61ee9ef119",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hetzner",
+                    "images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cloud_provider_token_uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cloud_provider_token_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Resource not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "08b110e0-dd30-46ab-bbd4-10af0ac6f2e9",
+          "name": "Get Hetzner SSH Keys",
+          "request": {
+            "name": "Get Hetzner SSH Keys",
+            "description": {
+              "content": "Get all SSH keys stored in the Hetzner account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hetzner",
+                "ssh-keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cloud_provider_token_uuid",
+                  "value": "<string>",
+                  "description": "Cloud provider token UUID. Required if cloud_provider_token_id is not provided."
+                },
+                {
+                  "disabled": false,
+                  "key": "cloud_provider_token_id",
+                  "value": "<string>",
+                  "description": "Deprecated: Use cloud_provider_token_uuid instead. Cloud provider token UUID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1eeba1bf-953e-4672-b622-feb8e61c2f42",
+              "name": "List of Hetzner SSH keys.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hetzner",
+                    "ssh-keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cloud_provider_token_uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cloud_provider_token_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3474,\n    \"name\": \"string\",\n    \"fingerprint\": \"string\",\n    \"public_key\": \"string\"\n  },\n  {\n    \"id\": 7693,\n    \"name\": \"string\",\n    \"fingerprint\": \"string\",\n    \"public_key\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e8962bd-70ca-4bb8-9985-0cbc31eb6d94",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hetzner",
+                    "ssh-keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cloud_provider_token_uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cloud_provider_token_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "30f14156-ee56-4f5f-8005-f7365b39d591",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hetzner",
+                    "ssh-keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cloud_provider_token_uuid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cloud_provider_token_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Resource not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3d0e93a-ac0f-4b69-8d11-ca091104503e",
+          "name": "Create Hetzner Server",
+          "request": {
+            "name": "Create Hetzner Server",
+            "description": {
+              "content": "Create a new server on Hetzner and register it in Coolify.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "servers",
+                "hetzner"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"location\": \"<string>\",\n  \"server_type\": \"<string>\",\n  \"image\": \"<integer>\",\n  \"private_key_uuid\": \"<string>\",\n  \"cloud_provider_token_uuid\": \"<string>\",\n  \"cloud_provider_token_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"enable_ipv4\": \"<boolean>\",\n  \"enable_ipv6\": \"<boolean>\",\n  \"hetzner_ssh_key_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"cloud_init_script\": \"<string>\",\n  \"instant_validate\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "17d130f1-1090-433b-9195-2e8c18b9faa9",
+              "name": "Hetzner server created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    "hetzner"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"nbg1\",\n  \"server_type\": \"cx11\",\n  \"image\": 15512617,\n  \"private_key_uuid\": \"xyz789\",\n  \"cloud_provider_token_uuid\": \"abc123\",\n  \"cloud_provider_token_id\": \"abc123\",\n  \"name\": \"my-server\",\n  \"enable_ipv4\": true,\n  \"enable_ipv6\": true,\n  \"hetzner_ssh_key_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"cloud_init_script\": \"<string>\",\n  \"instant_validate\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"og888os\",\n  \"hetzner_server_id\": 7552,\n  \"ip\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b823c2a-2fe5-4e7d-aa73-427a88ad7a2d",
+              "name": "Invalid token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    "hetzner"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"nbg1\",\n  \"server_type\": \"cx11\",\n  \"image\": 15512617,\n  \"private_key_uuid\": \"xyz789\",\n  \"cloud_provider_token_uuid\": \"abc123\",\n  \"cloud_provider_token_id\": \"abc123\",\n  \"name\": \"my-server\",\n  \"enable_ipv4\": true,\n  \"enable_ipv6\": true,\n  \"hetzner_ssh_key_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"cloud_init_script\": \"<string>\",\n  \"instant_validate\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Invalid token.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc1162fc-2d77-42a0-bfff-a1f04b7bd673",
+              "name": "Unauthenticated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    "hetzner"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"nbg1\",\n  \"server_type\": \"cx11\",\n  \"image\": 15512617,\n  \"private_key_uuid\": \"xyz789\",\n  \"cloud_provider_token_uuid\": \"abc123\",\n  \"cloud_provider_token_id\": \"abc123\",\n  \"name\": \"my-server\",\n  \"enable_ipv4\": true,\n  \"enable_ipv6\": true,\n  \"hetzner_ssh_key_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"cloud_init_script\": \"<string>\",\n  \"instant_validate\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a7eebfae-4013-4ca8-9908-8b4b868ce6c9",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    "hetzner"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"nbg1\",\n  \"server_type\": \"cx11\",\n  \"image\": 15512617,\n  \"private_key_uuid\": \"xyz789\",\n  \"cloud_provider_token_uuid\": \"abc123\",\n  \"cloud_provider_token_id\": \"abc123\",\n  \"name\": \"my-server\",\n  \"enable_ipv4\": true,\n  \"enable_ipv6\": true,\n  \"hetzner_ssh_key_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"cloud_init_script\": \"<string>\",\n  \"instant_validate\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Resource not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cec63750-f2fa-4ebd-b9eb-c5ff4f7272be",
+              "name": "Validation error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    "hetzner"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"nbg1\",\n  \"server_type\": \"cx11\",\n  \"image\": 15512617,\n  \"private_key_uuid\": \"xyz789\",\n  \"cloud_provider_token_uuid\": \"abc123\",\n  \"cloud_provider_token_id\": \"abc123\",\n  \"name\": \"my-server\",\n  \"enable_ipv4\": true,\n  \"enable_ipv6\": true,\n  \"hetzner_ssh_key_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"cloud_init_script\": \"<string>\",\n  \"instant_validate\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Validation error.\",\n  \"errors\": {\n    \"name\": [\n      \"The name field is required.\"\n    ],\n    \"api_url\": [\n      \"The api url field is required.\",\n      \"The api url format is invalid.\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "698b0a27-896a-496e-9eef-f5f39410b13c",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "servers",
+                    "hetzner"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"nbg1\",\n  \"server_type\": \"cx11\",\n  \"image\": 15512617,\n  \"private_key_uuid\": \"xyz789\",\n  \"cloud_provider_token_uuid\": \"abc123\",\n  \"cloud_provider_token_id\": \"abc123\",\n  \"name\": \"my-server\",\n  \"enable_ipv4\": true,\n  \"enable_ipv6\": true,\n  \"hetzner_ssh_key_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"cloud_init_script\": \"<string>\",\n  \"instant_validate\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Number of seconds to wait before retrying.",
+                  "key": "Retry-After",
+                  "value": "60"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Rate limit exceeded. Please try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.coolify.io/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e42a9a07-f9a7-4b9f-beb5-48edf0928d3d",
+    "name": "Coolify Applications Hetzner API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Applications",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Coolify Applications GitHub Apps API",
+    "version": "0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "GitHub Apps",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/github-apps",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List all GitHub apps."
+        },
+        {
+          "info": {
+            "name": "Create GitHub App",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.coolify.io/api/v1/github-apps",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a new GitHub app."
+        },
+        {
+          "info": {
+            "name": "Load Repositories for a GitHub App",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/github-apps/:github_app_id/repositories",
+            "params": [
+              {
+                "name": "github_app_id",
+                "value": "",
+                "type": "path",
+                "description": "GitHub App ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Fetch repositories from GitHub for a given GitHub app."
+        },
+        {
+          "info": {
+            "name": "Load Branches for a GitHub Repository",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/github-apps/:github_app_id/repositories/:owner/:repo/branches",
+            "params": [
+              {
+                "name": "github_app_id",
+                "value": "",
+                "type": "path",
+                "description": "GitHub App ID"
+              },
+              {
+                "name": "owner",
+                "value": "",
+                "type": "path",
+                "description": "Repository owner"
+              },
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repository name"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Fetch branches from GitHub for a given repository."
+        },
+        {
+          "info": {
+            "name": "Update GitHub App",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://app.coolify.io/api/v1/github-apps/:github_app_id",
+            "params": [
+              {
+                "name": "github_app_id",
+                "value": "",
+                "type": "path",
+                "description": "GitHub App ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update an existing GitHub app."
+        },
+        {
+          "info": {
+            "name": "Delete GitHub App",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.coolify.io/api/v1/github-apps/:github_app_id",
+            "params": [
+              {
+                "name": "github_app_id",
+                "value": "",
+                "type": "path",
+                "description": "GitHub App ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a GitHub app if it's not being used by any applications."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

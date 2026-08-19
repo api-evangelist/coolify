@@ -1,0 +1,153 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Coolify Applications Hetzner API",
+    "version": "0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Hetzner",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Hetzner Locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/hetzner/locations",
+            "params": [
+              {
+                "name": "cloud_provider_token_uuid",
+                "value": "",
+                "type": "query",
+                "description": "Cloud provider token UUID. Required if cloud_provider_token_id is not provided."
+              },
+              {
+                "name": "cloud_provider_token_id",
+                "value": "",
+                "type": "query",
+                "description": "Deprecated: Use cloud_provider_token_uuid instead. Cloud provider token UUID."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get all available Hetzner datacenter locations."
+        },
+        {
+          "info": {
+            "name": "Get Hetzner Server Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/hetzner/server-types",
+            "params": [
+              {
+                "name": "cloud_provider_token_uuid",
+                "value": "",
+                "type": "query",
+                "description": "Cloud provider token UUID. Required if cloud_provider_token_id is not provided."
+              },
+              {
+                "name": "cloud_provider_token_id",
+                "value": "",
+                "type": "query",
+                "description": "Deprecated: Use cloud_provider_token_uuid instead. Cloud provider token UUID."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get all available Hetzner server types (instance sizes)."
+        },
+        {
+          "info": {
+            "name": "Get Hetzner Images",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/hetzner/images",
+            "params": [
+              {
+                "name": "cloud_provider_token_uuid",
+                "value": "",
+                "type": "query",
+                "description": "Cloud provider token UUID. Required if cloud_provider_token_id is not provided."
+              },
+              {
+                "name": "cloud_provider_token_id",
+                "value": "",
+                "type": "query",
+                "description": "Deprecated: Use cloud_provider_token_uuid instead. Cloud provider token UUID."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get all available Hetzner system images (operating systems)."
+        },
+        {
+          "info": {
+            "name": "Get Hetzner SSH Keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/hetzner/ssh-keys",
+            "params": [
+              {
+                "name": "cloud_provider_token_uuid",
+                "value": "",
+                "type": "query",
+                "description": "Cloud provider token UUID. Required if cloud_provider_token_id is not provided."
+              },
+              {
+                "name": "cloud_provider_token_id",
+                "value": "",
+                "type": "query",
+                "description": "Deprecated: Use cloud_provider_token_uuid instead. Cloud provider token UUID."
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get all SSH keys stored in the Hetzner account."
+        },
+        {
+          "info": {
+            "name": "Create Hetzner Server",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.coolify.io/api/v1/servers/hetzner",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a new server on Hetzner and register it in Coolify."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

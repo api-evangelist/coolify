@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Coolify Applications Disable API",
+    "version": "0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Disable",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Disable API",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.coolify.io/api/v1/disable",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Disable API (only with root permissions)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
