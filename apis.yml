@@ -23,6 +23,13 @@ created: '2026-05-25'
 modified: '2026-05-25'
 specificationVersion: '0.23'
 tags:
+- Platform-as-a-Service
+- Self-Hosting
+- Deployment
+- Open-Source
+- Containers
+- Docker
+tags_raw:
 - Platform as a Service
 - Self-Hosting
 - Deployment
@@ -33,6 +40,12 @@ apis:
 - aid: coolify:coolify
   name: Coolify
   tags:
+  - Platform-as-a-Service
+  - Self-Hosting
+  - Deployment
+  - Docker
+  - Open-Source
+  tags_raw:
   - Platform as a Service
   - Self-Hosting
   - Deployment
@@ -57,6 +70,8 @@ apis:
   humanURL: https://coolify.io/
   baseURL: https://app.coolify.io/api/v1
   tags:
+  - Application
+  tags_raw:
   - Applications
   properties:
   - type: OpenAPI
@@ -105,6 +120,8 @@ apis:
   humanURL: https://coolify.io/
   baseURL: https://app.coolify.io/api/v1
   tags:
+  - Deployment
+  tags_raw:
   - Deployments
   properties:
   - type: OpenAPI
@@ -201,6 +218,8 @@ apis:
   humanURL: https://coolify.io/
   baseURL: https://app.coolify.io/api/v1
   tags:
+  - MCP
+  tags_raw:
   - Mcp
   properties:
   - type: OpenAPI
@@ -233,6 +252,8 @@ apis:
   humanURL: https://coolify.io/
   baseURL: https://app.coolify.io/api/v1
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
@@ -313,6 +334,8 @@ apis:
   humanURL: https://coolify.io/
   baseURL: https://app.coolify.io/api/v1
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
