@@ -5,6 +5,19 @@ description: Coolify is an open-source, self-hostable Platform-as-a-Service alte
   280+ one-click services to any SSH-accessible server (VPS, bare-metal, Raspberry Pi, EC2, Hetzner, DigitalOcean)
   while keeping every configuration value, deployment, and dataset on infrastructure you own.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: true
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - pricing
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
