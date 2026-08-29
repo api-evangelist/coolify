@@ -457,7 +457,7 @@ common:
   type: Agent
 - name: Coolify Examples
   url: https://github.com/coollabsio/coolify-examples
-  type: Samples
+  type: Examples
 - name: Coolify Docs
   url: https://github.com/coollabsio/coolify-docs
   type: Documentation
