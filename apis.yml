@@ -377,6 +377,8 @@ apis:
   - type: Authentication
     url: https://coolify.io/docs/api-reference/authorization
 common:
+- type: Website
+  url: https://www.coolify.io/
 - type: AgenticAccess
   url: agentic-access/coolify-agentic-access.yml
 - type: DomainSecurity
