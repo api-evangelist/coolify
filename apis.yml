@@ -118,6 +118,8 @@ apis:
   humanURL: https://coolify.io/
   baseURL: https://app.coolify.io/api/v1
   tags:
+  - Database
+  tags_raw:
   - Databases
   properties:
   - type: OpenAPI
