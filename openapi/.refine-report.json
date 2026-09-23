@@ -1,24 +1,7 @@
 {
   "provider": "coolify",
   "sources": [
-    "coolify-applications-api-openapi.yml",
-    "coolify-cloud-tokens-api-openapi.yml",
-    "coolify-databases-api-openapi.yml",
-    "coolify-deployments-api-openapi.yml",
-    "coolify-disable-api-openapi.yml",
-    "coolify-enable-api-openapi.yml",
-    "coolify-github-apps-api-openapi.yml",
-    "coolify-health-api-openapi.yml",
-    "coolify-hetzner-api-openapi.yml",
-    "coolify-mcp-api-openapi.yml",
-    "coolify-private-keys-api-openapi.yml",
-    "coolify-projects-api-openapi.yml",
-    "coolify-resources-api-openapi.yml",
-    "coolify-scheduled-tasks-api-openapi.yml",
-    "coolify-servers-api-openapi.yml",
-    "coolify-services-api-openapi.yml",
-    "coolify-teams-api-openapi.yml",
-    "coolify-version-api-openapi.yml"
+    "_original/coolify-openapi.yml"
   ],
   "outputs": [
     "coolify-applications-api-openapi.yml",
@@ -43,6 +26,40 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "coolify-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "coolify-openapi.yml: tagged paths GET /version -> Version",
+    "coolify-openapi.yml: tagged paths GET /enable -> Enable",
+    "coolify-openapi.yml: tagged paths GET /disable -> Disable",
+    "coolify-openapi.yml: tagged paths POST /mcp/enable -> Mcp",
+    "coolify-openapi.yml: tagged paths POST /mcp/disable -> Mcp",
+    "coolify-openapi.yml: tagged paths GET /health -> Health",
+    "coolify-openapi.yml: declared missing tag: Disable",
+    "coolify-openapi.yml: declared missing tag: Enable",
+    "coolify-openapi.yml: declared missing tag: Health",
+    "coolify-openapi.yml: declared missing tag: Mcp",
+    "coolify-openapi.yml: declared missing tag: Version",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "coolify-applications-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-cloud-tokens-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-databases-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-deployments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-disable-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-enable-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-github-apps-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-health-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-hetzner-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-mcp-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-private-keys-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-resources-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-scheduled-tasks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-servers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-services-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-teams-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "coolify-version-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

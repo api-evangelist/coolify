@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Coolify Applications Services API
+  title: Coolify Services API
   version: '0.1'
-  description: Applications
+  description: Services
 servers:
 - url: https://app.coolify.io/api/v1
   description: Coolify Cloud API. Change the host to your own instance if you are self-hosting.
@@ -1077,16 +1077,6 @@ components:
           type: string
       type: object
   responses:
-    '400':
-      description: Invalid token.
-      content:
-        application/json:
-          schema:
-            properties:
-              message:
-                type: string
-                example: Invalid token.
-            type: object
     '404':
       description: Resource not found.
       content:
@@ -1096,6 +1086,16 @@ components:
               message:
                 type: string
                 example: Resource not found.
+            type: object
+    '400':
+      description: Invalid token.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Invalid token.
             type: object
     '401':
       description: Unauthenticated.
