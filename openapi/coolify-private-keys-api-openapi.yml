@@ -184,6 +184,49 @@ paths:
       security:
       - bearerAuth: []
 components:
+  responses:
+    '401':
+      description: Unauthenticated.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Unauthenticated.
+            type: object
+    '422':
+      description: Validation error.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Validation error.
+              errors:
+                type: object
+                example:
+                  name:
+                  - The name field is required.
+                  api_url:
+                  - The api url field is required.
+                  - The api url format is invalid.
+                additionalProperties:
+                  type: array
+                  items:
+                    type: string
+            type: object
+    '400':
+      description: Invalid token.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Invalid token.
+            type: object
   schemas:
     PrivateKey:
       description: Private Key model
@@ -214,49 +257,6 @@ components:
         updated_at:
           type: string
       type: object
-  responses:
-    '401':
-      description: Unauthenticated.
-      content:
-        application/json:
-          schema:
-            properties:
-              message:
-                type: string
-                example: Unauthenticated.
-            type: object
-    '400':
-      description: Invalid token.
-      content:
-        application/json:
-          schema:
-            properties:
-              message:
-                type: string
-                example: Invalid token.
-            type: object
-    '422':
-      description: Validation error.
-      content:
-        application/json:
-          schema:
-            properties:
-              message:
-                type: string
-                example: Validation error.
-              errors:
-                type: object
-                example:
-                  name:
-                  - The name field is required.
-                  api_url:
-                  - The api url field is required.
-                  - The api url format is invalid.
-                additionalProperties:
-                  type: array
-                  items:
-                    type: string
-            type: object
   securitySchemes:
     bearerAuth:
       type: http

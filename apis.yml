@@ -6,17 +6,22 @@ description: Coolify is an open-source, self-hostable Platform-as-a-Service alte
   while keeping every configuration value, deployment, and dataset on infrastructure you own.
 type: Index
 deliveryModel:
-  model: unknown
-  open_source: unknown
+  model: open-core
+  license: Apache-2.0
+  license_evidence:
+    repo: coollabsio/coolify
+    spdx: Apache-2.0
+    stars: 62254
+  open_source: true
   commercial: true
   callable_host: true
-  label: Delivery model not determined — needs a product licence on record
-  confidence: low
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: medium
   source:
   - openapi
   - pricing
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-license
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: unknown
@@ -40,7 +45,7 @@ tags:
 - Platform-as-a-Service
 - Self-Hosting
 - Deployment
-- Open-Source
+- Open Source
 - Containers
 - Docker
 tags_raw:
@@ -50,6 +55,7 @@ tags_raw:
 - Open Source
 - Containers
 - Docker
+- Open-Source
 apis:
 - aid: coolify:coolify
   name: Coolify
@@ -58,13 +64,14 @@ apis:
   - Self-Hosting
   - Deployment
   - Docker
-  - Open-Source
+  - Open Source
   tags_raw:
   - Platform as a Service
   - Self-Hosting
   - Deployment
   - Docker
   - Open Source
+  - Open-Source
   humanURL: https://coolify.io/
   properties:
   - url: https://coolify.io/

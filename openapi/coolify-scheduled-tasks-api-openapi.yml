@@ -461,44 +461,50 @@ paths:
       security:
       - bearerAuth: []
 components:
+  responses:
+    '401':
+      description: Unauthenticated.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Unauthenticated.
+            type: object
+    '422':
+      description: Validation error.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Validation error.
+              errors:
+                type: object
+                example:
+                  name:
+                  - The name field is required.
+                  api_url:
+                  - The api url field is required.
+                  - The api url format is invalid.
+                additionalProperties:
+                  type: array
+                  items:
+                    type: string
+            type: object
+    '404':
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Resource not found.
+            type: object
   schemas:
-    ScheduledTask:
-      description: Scheduled Task model
-      properties:
-        id:
-          type: integer
-          description: The unique identifier of the scheduled task in the database.
-        uuid:
-          type: string
-          description: The unique identifier of the scheduled task.
-        enabled:
-          type: boolean
-          description: The flag to indicate if the scheduled task is enabled.
-        name:
-          type: string
-          description: The name of the scheduled task.
-        command:
-          type: string
-          description: The command to execute.
-        frequency:
-          type: string
-          description: The frequency of the scheduled task.
-        container:
-          type: string
-          nullable: true
-          description: The container where the command should be executed.
-        timeout:
-          type: integer
-          description: The timeout of the scheduled task in seconds.
-        created_at:
-          type: string
-          format: date-time
-          description: The date and time when the scheduled task was created.
-        updated_at:
-          type: string
-          format: date-time
-          description: The date and time when the scheduled task was last updated.
-      type: object
     ScheduledTaskExecution:
       description: Scheduled Task Execution model
       properties:
@@ -542,49 +548,43 @@ components:
           format: date-time
           description: When the record was last updated.
       type: object
-  responses:
-    '404':
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            properties:
-              message:
-                type: string
-                example: Resource not found.
-            type: object
-    '401':
-      description: Unauthenticated.
-      content:
-        application/json:
-          schema:
-            properties:
-              message:
-                type: string
-                example: Unauthenticated.
-            type: object
-    '422':
-      description: Validation error.
-      content:
-        application/json:
-          schema:
-            properties:
-              message:
-                type: string
-                example: Validation error.
-              errors:
-                type: object
-                example:
-                  name:
-                  - The name field is required.
-                  api_url:
-                  - The api url field is required.
-                  - The api url format is invalid.
-                additionalProperties:
-                  type: array
-                  items:
-                    type: string
-            type: object
+    ScheduledTask:
+      description: Scheduled Task model
+      properties:
+        id:
+          type: integer
+          description: The unique identifier of the scheduled task in the database.
+        uuid:
+          type: string
+          description: The unique identifier of the scheduled task.
+        enabled:
+          type: boolean
+          description: The flag to indicate if the scheduled task is enabled.
+        name:
+          type: string
+          description: The name of the scheduled task.
+        command:
+          type: string
+          description: The command to execute.
+        frequency:
+          type: string
+          description: The frequency of the scheduled task.
+        container:
+          type: string
+          nullable: true
+          description: The container where the command should be executed.
+        timeout:
+          type: integer
+          description: The timeout of the scheduled task in seconds.
+        created_at:
+          type: string
+          format: date-time
+          description: The date and time when the scheduled task was created.
+        updated_at:
+          type: string
+          format: date-time
+          description: The date and time when the scheduled task was last updated.
+      type: object
   securitySchemes:
     bearerAuth:
       type: http
