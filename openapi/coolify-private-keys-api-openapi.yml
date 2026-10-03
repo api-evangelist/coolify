@@ -195,6 +195,16 @@ components:
                 type: string
                 example: Unauthenticated.
             type: object
+    '400':
+      description: Invalid token.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Invalid token.
+            type: object
     '422':
       description: Validation error.
       content:
@@ -216,16 +226,6 @@ components:
                   type: array
                   items:
                     type: string
-            type: object
-    '400':
-      description: Invalid token.
-      content:
-        application/json:
-          schema:
-            properties:
-              message:
-                type: string
-                example: Invalid token.
             type: object
   schemas:
     PrivateKey:

@@ -375,16 +375,6 @@ paths:
       - bearerAuth: []
 components:
   responses:
-    '401':
-      description: Unauthenticated.
-      content:
-        application/json:
-          schema:
-            properties:
-              message:
-                type: string
-                example: Unauthenticated.
-            type: object
     '422':
       description: Validation error.
       content:
@@ -407,16 +397,6 @@ components:
                   items:
                     type: string
             type: object
-    '404':
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            properties:
-              message:
-                type: string
-                example: Resource not found.
-            type: object
     '400':
       description: Invalid token.
       content:
@@ -427,7 +407,82 @@ components:
                 type: string
                 example: Invalid token.
             type: object
+    '404':
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Resource not found.
+            type: object
+    '401':
+      description: Unauthenticated.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Unauthenticated.
+            type: object
   schemas:
+    Server:
+      description: Server model
+      properties:
+        id:
+          type: integer
+          description: The server ID.
+        uuid:
+          type: string
+          description: The server UUID.
+        name:
+          type: string
+          description: The server name.
+        description:
+          type: string
+          description: The server description.
+        ip:
+          type: string
+          description: The IP address.
+        user:
+          type: string
+          description: The user.
+        port:
+          type: integer
+          description: The port number.
+        proxy:
+          type: object
+          description: The proxy configuration.
+        proxy_type:
+          type: string
+          enum:
+          - traefik
+          - caddy
+          - none
+          description: The proxy type.
+        high_disk_usage_notification_sent:
+          type: boolean
+          description: The flag to indicate if the high disk usage notification has been sent.
+        unreachable_notification_sent:
+          type: boolean
+          description: The flag to indicate if the unreachable notification has been sent.
+        unreachable_count:
+          type: integer
+          description: The unreachable count for your server.
+        validation_logs:
+          type: string
+          description: The validation logs.
+        log_drain_notification_sent:
+          type: boolean
+          description: The flag to indicate if the log drain notification has been sent.
+        swarm_cluster:
+          type: string
+          description: The swarm cluster configuration.
+        settings:
+          $ref: '#/components/schemas/ServerSetting'
+      type: object
     ServerSetting:
       description: Server Settings model
       properties:
@@ -512,61 +567,6 @@ components:
         connection_timeout:
           type: integer
           description: SSH connection timeout in seconds.
-      type: object
-    Server:
-      description: Server model
-      properties:
-        id:
-          type: integer
-          description: The server ID.
-        uuid:
-          type: string
-          description: The server UUID.
-        name:
-          type: string
-          description: The server name.
-        description:
-          type: string
-          description: The server description.
-        ip:
-          type: string
-          description: The IP address.
-        user:
-          type: string
-          description: The user.
-        port:
-          type: integer
-          description: The port number.
-        proxy:
-          type: object
-          description: The proxy configuration.
-        proxy_type:
-          type: string
-          enum:
-          - traefik
-          - caddy
-          - none
-          description: The proxy type.
-        high_disk_usage_notification_sent:
-          type: boolean
-          description: The flag to indicate if the high disk usage notification has been sent.
-        unreachable_notification_sent:
-          type: boolean
-          description: The flag to indicate if the unreachable notification has been sent.
-        unreachable_count:
-          type: integer
-          description: The unreachable count for your server.
-        validation_logs:
-          type: string
-          description: The validation logs.
-        log_drain_notification_sent:
-          type: boolean
-          description: The flag to indicate if the log drain notification has been sent.
-        swarm_cluster:
-          type: string
-          description: The swarm cluster configuration.
-        settings:
-          $ref: '#/components/schemas/ServerSetting'
       type: object
   securitySchemes:
     bearerAuth:
