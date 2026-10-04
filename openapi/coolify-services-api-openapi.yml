@@ -1077,6 +1077,16 @@ components:
           description: The date and time when the service was deleted.
       type: object
   responses:
+    '401':
+      description: Unauthenticated.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Unauthenticated.
+            type: object
     '422':
       description: Validation error.
       content:
@@ -1099,16 +1109,6 @@ components:
                   items:
                     type: string
             type: object
-    '400':
-      description: Invalid token.
-      content:
-        application/json:
-          schema:
-            properties:
-              message:
-                type: string
-                example: Invalid token.
-            type: object
     '404':
       description: Resource not found.
       content:
@@ -1119,15 +1119,15 @@ components:
                 type: string
                 example: Resource not found.
             type: object
-    '401':
-      description: Unauthenticated.
+    '400':
+      description: Invalid token.
       content:
         application/json:
           schema:
             properties:
               message:
                 type: string
-                example: Unauthenticated.
+                example: Invalid token.
             type: object
   securitySchemes:
     bearerAuth:

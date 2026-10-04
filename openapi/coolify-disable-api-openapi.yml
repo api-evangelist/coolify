@@ -44,16 +44,6 @@ paths:
       - Disable
 components:
   responses:
-    '401':
-      description: Unauthenticated.
-      content:
-        application/json:
-          schema:
-            properties:
-              message:
-                type: string
-                example: Unauthenticated.
-            type: object
     '400':
       description: Invalid token.
       content:
@@ -63,6 +53,16 @@ components:
               message:
                 type: string
                 example: Invalid token.
+            type: object
+    '401':
+      description: Unauthenticated.
+      content:
+        application/json:
+          schema:
+            properties:
+              message:
+                type: string
+                example: Unauthenticated.
             type: object
   securitySchemes:
     bearerAuth:
