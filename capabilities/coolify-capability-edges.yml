@@ -1,0 +1,44 @@
+slug: coolify
+provider: Coolify
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Deployments
+  spec_file: coolify-deployments-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.8
+  evidence: '"List" / "Get" / "Cancel" deployments, "Deploy" (deploy-by-tag-or-uuid), schema ApplicationDeploymentQueue'
+  reason: Operations trigger, queue, monitor and cancel deployments of applications to servers — directly
+    deployment orchestration. Minor ambiguity with continuous integration/release engineering.
+- tag: Servers
+  spec_file: coolify-servers-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.78
+  evidence: POST /servers create-server; GET /servers/{uuid}/resources Resources; GET /servers/{uuid}/validate
+    Validate
+  reason: Full lifecycle over the host servers (VPS/bare-metal) that run workloads, including validation
+    and attached resources/domains — compute infrastructure management.
+- tag: Hetzner
+  spec_file: coolify-hetzner-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.72
+  evidence: GET /hetzner/server-types; GET /hetzner/images; POST /servers/hetzner create-hetzner-server
+    Create Hetzner Server
+  reason: Operations provision and enumerate cloud compute resources (locations, server types, images,
+    SSH keys, server creation) at a cloud provider — IT infrastructure (compute/cloud) management.

@@ -386,6 +386,9 @@ apis:
   - type: Authentication
     url: https://coolify.io/docs/api-reference/authorization
 common:
+- type: CapabilityMap
+  url: capabilities/coolify-capability-edges.yml
+  name: Coolify Business Capability Map
 - type: Website
   url: https://www.coolify.io/
 - type: AgenticAccess
