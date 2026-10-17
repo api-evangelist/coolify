@@ -184,36 +184,6 @@ paths:
       security:
       - bearerAuth: []
 components:
-  schemas:
-    PrivateKey:
-      description: Private Key model
-      properties:
-        id:
-          type: integer
-        uuid:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        private_key:
-          type: string
-          format: private-key
-        public_key:
-          type: string
-          description: The public key of the private key.
-        fingerprint:
-          type: string
-          description: The fingerprint of the private key.
-        is_git_related:
-          type: boolean
-        team_id:
-          type: integer
-        created_at:
-          type: string
-        updated_at:
-          type: string
-      type: object
   responses:
     '400':
       description: Invalid token.
@@ -257,6 +227,36 @@ components:
                   items:
                     type: string
             type: object
+  schemas:
+    PrivateKey:
+      description: Private Key model
+      properties:
+        id:
+          type: integer
+        uuid:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        private_key:
+          type: string
+          format: private-key
+        public_key:
+          type: string
+          description: The public key of the private key.
+        fingerprint:
+          type: string
+          description: The fingerprint of the private key.
+        is_git_related:
+          type: boolean
+        team_id:
+          type: integer
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      type: object
   securitySchemes:
     bearerAuth:
       type: http
