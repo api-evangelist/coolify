@@ -1,4 +1,4 @@
-# Coolify (coolify)
+# Coolify
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,105 +66,141 @@
 
 Coolify is an open-source, self-hostable Platform-as-a-Service alternative to Vercel, Heroku, Netlify, and Railway. It lets you deploy static sites, APIs, full-stack applications, databases, and 280+ one-click services to any SSH-accessible server (VPS, bare-metal, Raspberry Pi, EC2, Hetzner, DigitalOcean) while keeping every configuration value, deployment, and dataset on infrastructure you own.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/coolify/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/coolify/refs/heads/main/apis.yml)
+**Areas:** Platform-as-a-Service · Self-Hosting · Deployment · Open Source · Containers · Docker
 
-## Scope
+## Coolify on APIs.io
 
-- **Type:** Index
+Everything profiled for Coolify is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/coolify/](https://apis.io/providers/coolify/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (19)
 
-- Platform as a Service
-- Self-Hosting
-- Deployment
-- Open Source
-- Containers
-- Docker
+- [Coolify](https://apis.io/apis/coolify/coolify/) — The Coolify platform - an open-source, Apache-2.0 licensed, self-hostable PaaS written in PHP (Laravel) that automates deployment of applications,…
+- [Coolify Applications API](https://apis.io/apis/coolify/coolify-applications-api/) — Applications
+- [Coolify Cloud Tokens API](https://apis.io/apis/coolify/coolify-cloud-tokens-api/) — Cloud Tokens
+- [Coolify Databases API](https://apis.io/apis/coolify/coolify-databases-api/) — Databases
+- [Coolify Deployments API](https://apis.io/apis/coolify/coolify-deployments-api/) — Deployments
+- [Coolify Disable API](https://apis.io/apis/coolify/coolify-disable-api/) — The Disable API from Coolify — 1 operation(s) for disable.
+- [Coolify Enable API](https://apis.io/apis/coolify/coolify-enable-api/) — The Enable API from Coolify — 1 operation(s) for enable.
+- [Coolify GitHub Apps API](https://apis.io/apis/coolify/coolify-github-apps-api/) — GitHub Apps
+- [Coolify Health API](https://apis.io/apis/coolify/coolify-health-api/) — The Health API from Coolify — 1 operation(s) for health.
+- [Coolify Hetzner API](https://apis.io/apis/coolify/coolify-hetzner-api/) — Hetzner
+- [Coolify Mcp API](https://apis.io/apis/coolify/coolify-mcp-api/) — The Mcp API from Coolify — 2 operation(s) for mcp.
+- [Coolify Private Keys API](https://apis.io/apis/coolify/coolify-private-keys-api/) — Private Keys
+- [Coolify Projects API](https://apis.io/apis/coolify/coolify-projects-api/) — Projects
+- [Coolify Resources API](https://apis.io/apis/coolify/coolify-resources-api/) — Resources
+- [Coolify Scheduled Tasks API](https://apis.io/apis/coolify/coolify-scheduled-tasks-api/) — Scheduled Tasks
+- [Coolify Servers API](https://apis.io/apis/coolify/coolify-servers-api/) — Servers
+- [Coolify Services API](https://apis.io/apis/coolify/coolify-services-api/) — Services
+- [Coolify Teams API](https://apis.io/apis/coolify/coolify-teams-api/) — Teams
+- [Coolify Version API](https://apis.io/apis/coolify/coolify-version-api/) — The Version API from Coolify — 1 operation(s) for version.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-25
-- **Modified:** 2026-05-25
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Coolify
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Coolify platform - an open-source, Apache-2.0 licensed, self-hostable PaaS written in PHP (Laravel) that automates deployment of applications, databases, and services to user-controlled servers via Docker and Docker Compose. Includes free SSL, scheduled backups to S3, pull-request previews, real-time logs, and a team-based RBAC model.
+- [Coolify Agentic Access](https://apis.io/agentic-access/coolify/coolify-agentic-access/)
 
-- **Human URL:** [https://coolify.io/](https://coolify.io/)
+#### Collections (19)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Platform as a Service
-- Self-Hosting
-- Deployment
-- Docker
-- Open Source
+- [Coolify](https://apis.io/collections/coolify/open-coolify/)
+- [Coolify Applications API](https://apis.io/collections/coolify/open-coolify-applications-api/)
+- [Coolify Applications Cloud Tokens API](https://apis.io/collections/coolify/open-coolify-cloud-tokens-api/)
+- [Coolify Applications Databases API](https://apis.io/collections/coolify/open-coolify-databases-api/)
+- [Coolify Applications Deployments API](https://apis.io/collections/coolify/open-coolify-deployments-api/)
+- [Coolify Applications Disable API](https://apis.io/collections/coolify/open-coolify-disable-api/)
+- [Coolify Applications Enable API](https://apis.io/collections/coolify/open-coolify-enable-api/)
+- [Coolify Applications GitHub Apps API](https://apis.io/collections/coolify/open-coolify-github-apps-api/)
+- [Coolify Applications Health API](https://apis.io/collections/coolify/open-coolify-health-api/)
+- [Coolify Applications Hetzner API](https://apis.io/collections/coolify/open-coolify-hetzner-api/)
+- [Coolify Applications Mcp API](https://apis.io/collections/coolify/open-coolify-mcp-api/)
+- [Coolify Applications Private Keys API](https://apis.io/collections/coolify/open-coolify-private-keys-api/)
+- [Coolify Applications Projects API](https://apis.io/collections/coolify/open-coolify-projects-api/)
+- [Coolify Applications Resources API](https://apis.io/collections/coolify/open-coolify-resources-api/)
+- [Coolify Applications Scheduled Tasks API](https://apis.io/collections/coolify/open-coolify-scheduled-tasks-api/)
+- [Coolify Applications Servers API](https://apis.io/collections/coolify/open-coolify-servers-api/)
+- [Coolify Applications Services API](https://apis.io/collections/coolify/open-coolify-services-api/)
+- [Coolify Applications Teams API](https://apis.io/collections/coolify/open-coolify-teams-api/)
+- [Coolify Applications Version API](https://apis.io/collections/coolify/open-coolify-version-api/)
 
-#### Properties
+#### Security (2)
 
-- [Portal](https://coolify.io/)
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Coolify Authentication](https://apis.io/security/coolify/coolify-authentication/)
+- [Coolify Domain Security](https://apis.io/security/coolify/coolify-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.coolify.io/)
 - [Documentation](https://coolify.io/docs/)
-- [Source Code](https://github.com/coollabsio/coolify)
-- [Postman Collection](collections/coolify.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/coolify.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Coolify REST API
-
-The Coolify REST API provides programmatic access to every resource managed by a Coolify instance - applications, databases, services, deployments, servers, projects, environments, teams, private keys, GitHub Apps, cloud-provider tokens, scheduled tasks, and Hetzner provisioning. The API is served at /api/v1 by both Coolify Cloud (app.coolify.io) and every self-hosted instance, authenticated with team-scoped Bearer tokens issued through Keys & Tokens.
-
-- **Human URL:** [https://coolify.io/docs/api-reference/authorization](https://coolify.io/docs/api-reference/authorization)
-- **Base URL:** `https://app.coolify.io/api/v1`
-
-#### Tags
-
-- Applications
-- Databases
-- Servers
-- Services
-- Deployments
-- Projects
-- Teams
-
-#### Properties
-
-- [Documentation](https://coolify.io/docs/api-reference/authorization)
-- [Reference](https://coolify.io/docs/api-reference/applications/list)
-- [Authentication](https://coolify.io/docs/api-reference/authorization)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/coolify/refs/heads/main/openapi/coolify-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/coolify.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/coolify.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/coollabsio)
-- [Portal](https://coolify.io/)
-- [Documentation](https://coolify.io/docs/)
-- [Getting Started](https://coolify.io/docs/installation)
-- [Login](https://app.coolify.io/login)
-- [Sign Up](https://app.coolify.io/register)
+- [Getting started](https://coolify.io/docs/installation)
 - [Pricing](https://coolify.io/pricing)
-- [Blog](https://coolify.io/blog)
-- [Changelog](https://github.com/coollabsio/coolify/releases)
-- [GitHub Organization](https://github.com/coollabsio/coolify)
 - [Support](https://coolify.io/docs/contact)
-- [Discord](https://coolify.io/discord)
-- [Twitter](https://twitter.com/coolifyio)
-- [GitHub Organization](https://github.com/coollabsio)
-- [Open Collective](https://opencollective.com/coollabsio)
-- [License](https://github.com/coollabsio/coolify/blob/main/LICENSE)
-- [Privacy Policy](https://coolify.io/legal/privacy)
-- [Terms of Service](https://coolify.io/legal/terms)
-- [Features](undefined)
-- [Plans](undefined)
-- [C L I](https://github.com/coollabsio/coolify-cli)
-- [Agent](https://github.com/coollabsio/sentinel)
-- [Samples](https://github.com/coollabsio/coolify-examples)
-- [Documentation](https://github.com/coollabsio/coolify-docs)
-- [Build Pack](https://github.com/coollabsio/coolpack)
+- [Changelog](https://github.com/coollabsio/coolify/releases)
+- [Blog](https://coolify.io/blog)
+- [Terms of service](https://coolify.io/legal/terms)
+- [Privacy policy](https://coolify.io/legal/privacy)
+- [GitHub](https://github.com/coollabsio/coolify)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 44.2** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 55.8 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 64.3 |
+| Access clarity | 44.7 |
+
+**Agent readiness 27.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | verified |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | — |
+
+**Regulatory alignment 19.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/coolify/](https://apis.io/providers/coolify/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Coolify: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/coolify/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
